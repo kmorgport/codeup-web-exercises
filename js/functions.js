@@ -11,6 +11,7 @@
 function sayHello(name){
  return ("Hello, "+ name +"!");
 };
+console.log(sayHello("Kole"));
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
