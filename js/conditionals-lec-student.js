@@ -30,7 +30,7 @@ if(numOfLives == 0){
     alert("Sorry, Game Over")
 }
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
-var weather = "snowing"";
+var weather = "snowing";
 if(weather == "snowing"){
     alert("Its snowing!")
 }
@@ -85,8 +85,29 @@ function isNumGreater(numInp){
 
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0, else alert "Next Level!"
+function checkIfGameOver(numberOfLives){
+    if(numberOfLives<=0){
+        alert("Sorry game over")
+    }else{
+        alert("Next level!")
+    }
+}
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing", else alert "Check back later for more details!"
+function weatherForcast(weather){
+    if(weather == "snowing"){
+        alert("It's snowing!")
+    }else{
+        alert("Check back later for more details!")
+    }
+}
 //TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
+function biggerThan10(num){
+    if(num>10){
+        alert(true)
+    }else{
+        alert("the number is less than 10")
+    }
+}
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!. 
 
 
@@ -101,7 +122,12 @@ function isNumGreater(numInp){
 
 
 //TODO: Write a confirm asking the user if they are 13 years of age or older. If they are, alert "You may proceed", if they are not, alert "Sorry, you are not able to proceed"
-
+var conf = confirm("Are you over 13 years old?")
+if(conf == true){
+    alert("You may proceed")
+}else{
+    alert("Sorry, you are not able to proceed")
+}
 // ================ IF / ELSE IF / ELSE STATEMENT SYNTAX ===============
 // if(condition1){
 //     // code here runs if condition evaluates to true
