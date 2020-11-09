@@ -31,13 +31,17 @@
     console.log(planets);
 
     console.log('Removing "Pluto" from the end of the planets array.');
+    planets.pop();
     console.log(planets);
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
+    console.log(planets.indexOf("Earth"));
 
     console.log("Reversing the order of the planets array.");
+    planets.reverse();
     console.log(planets);
 
     console.log("Sorting the planets array.");
+    planets.sort;
     console.log(planets);
 })();
