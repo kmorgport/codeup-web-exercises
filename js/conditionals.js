@@ -56,7 +56,10 @@ switch(colorChoice){
         alert("The sky is blue");
         break;
     case "cyan":
-        alert("I'm sorry, your color isn't red, blue, or cyan");
+        alert("The sea is cyan.");
+        break;
+    default:
+        alert("I'm sorry, you didn't pick red, blue, or cyan");
         break;
 }
 /**
@@ -180,6 +183,10 @@ function letsPlayAGame(){
                 numChoice = chooseNumber();
                 numCheck = isNaN(numChoice);
             } while ( numCheck == 1)
+            isOdd(numChoice);
+            plus100(numChoice);
+            negOrPos(numChoice);
+        }else if(numCheck == 0){
             isOdd(numChoice);
             plus100(numChoice);
             negOrPos(numChoice);
