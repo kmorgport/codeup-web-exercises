@@ -24,15 +24,46 @@ console.log("hello from conditionals lec.js!");
 
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
+var numOfLives = 1;
+numOfLives--
+if(numOfLives == 0){
+    alert("Sorry, Game Over")
+}
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
+var weather = "snowing"";
+if(weather == "snowing"){
+    alert("Its snowing!")
+}
 //TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
-
+var numberInput = 11;
+if(numberInput > 10){
+    alert(true)
+}
 
 
 
 //TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
+function gameOver(numberOfLives){
+    if(numberOfLives <= 0){
+        return true
+    }else{
+        return false
+    }
+}
 
+function weatherCheck(status){
+    if(status == "snowing"){
+        alert("It's snowing!")
+    }else{
+        alert("Clear skies!")
+    }
+}
 
+function isNumGreater(numInp){
+    if(numInp >10){
+        alert("Your number is greater than 10!")
+    }
+}
 
 
 
