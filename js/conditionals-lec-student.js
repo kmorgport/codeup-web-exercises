@@ -199,9 +199,21 @@ console.log(stopLight(light))
 
 // ================ NESTED STATEMENTS ===============
 //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license.
-
-
-
+function canDrive(age, permit){
+    if(age<15){
+        alert("You are ineligible for a license")
+    }else{
+        if(age ==15){
+            alert("You can get a permit")
+        }else if(age>16){
+            if(permit == false){
+                alert("You are not eligible for a linces")
+            }else{
+                alert("You are eligible for a license")
+            }
+        }
+    }
+}
 
 
 
@@ -228,7 +240,7 @@ console.log(stopLight(light))
 
 //TODO: Refactor the following conditional as a ternary
 
-// var weather = "sunny";
+var weather = "sunny";
 // var weatherMessage;
 
 // if(weather === "rainy"){
@@ -239,7 +251,7 @@ console.log(stopLight(light))
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
-var message = ("rainy") ? "It's rainy" : "Have a nice day"
+var message = (weather=== "rainy") ?"It's rainy" : "Have a nice day"
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
@@ -260,9 +272,37 @@ var message = ("rainy") ? "It's rainy" : "Have a nice day"
 
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
+var weatherToday = prompt("Is the weather rainy, sunny, or snow?");
+switch(weatherToday){
+    case "rainy":
+        alert("the weather is rainy");
+        break;
+    case "sunny":
+        alert("the weather is sunny");
+    case "snow":
+        alert("It's snowing");
+    default:
+        alert("The weather is fine");
+        break;
+}
 
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
+var trafficLightColor = prompt("What color is the traffic light?");
+switch(trafficLightColor){
+    case "red":
+        alert("You need to stop!");
+        break;
+    case "yellow":
+        alert("You need to slow down!");
+        break;
+    case "green":
+        alert("Your good to go!");
+        break;
+    default:
+        alert("Are you still driving?")
+        break;
+}
 
 
 
