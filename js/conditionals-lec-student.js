@@ -141,38 +141,58 @@ if(conf == true){
 
 // =============== IF / ELSE IF/ELSE STATEMENT EXAMPLES ================
 //TODO Together: Write an if/else if/else statement that alerts "It's snowing!" if weather is equal to "snowing", alerts "It's raining" if weather is equal to "raining", alerts "have a nice day" for all other cases
+if(weather == "snowing"){
+    alert("It's snowing!")
+}else if(weather == "raining"){
+    alert("I'ts raining")
+} else{
+    alert("have a nice day")
+}
 
 //TODO Together: refactor the above statement as a function
+function choosyWeather(weatherString){
+    if(weather == "snowing"){
+        return "It's snowing!"
+    }else if(weather == "raining"){
+        return "I'ts raining"
+    } else{
+        return "have a nice day"
+    }
+}
+var weather = "sunny";
+console.log(choosyWeather(weather))
+//Together: PIZZA PREFERENCE EXAMPLE
 
-// Together: PIZZA PREFERENCE EXAMPLE 
+var pizzaPreference = prompt("What kind of pizza do you like?");
+console.log("User pizza input: " + pizzaPreference);
 
-// var pizzaPreference = prompt("What kind of pizza do you like?");
-// console.log("User pizza input: " + pizzaPreference);
-//
-// if (pizzaPreference === "pineapple and hot sauce") {
-//     alert("What a coincidence, that's my favorite!");
-// } else if (pizzaPreference === "cheese") {
-//     alert("Just plain cheese? Okay...");
-// }  else if (pizzaPreference === "ham"){
-//     alert("Ham is easy to spell and awesome!");
-// } else {
-//     alert(pizzaPreference + " isn't my favorite, but let's order some!");
-// }
+if (pizzaPreference === "pineapple and hot sauce") {
+    alert("What a coincidence, that's my favorite!");
+} else if (pizzaPreference === "cheese") {
+    alert("Just plain cheese? Okay...");
+}  else if (pizzaPreference === "ham"){
+    alert("Ham is easy to spell and awesome!");
+} else {
+    alert(pizzaPreference + " isn't my favorite, but let's order some!");
+}
 
 
 
 
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
-function stopLight(light){
-    if(light == "green"){
-        alert("Thundercats are gooooo!")
-    }else if(light == "yellow"){
-        alert("Slow yer horses!")
+function stopLight(lightColor){
+    if(lightColor == "green"){
+        return "Thundercats are gooooo!"
+    }else if(lightColor == "yellow"){
+        return "Slow yer horses!"
+    }else if(lightColor === "red"){
+       return "Red means STOP."
     }else{
-        alert("Red means STOP.")
+        return "are you at a traffic light?"
     }
 }
-
+var light = "green";
+console.log(stopLight(light))
 
 
 

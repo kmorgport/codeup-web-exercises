@@ -2,7 +2,7 @@
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray;
+    var planetsArray = planetsString.split("|");
 
     /**
      * TODO:
@@ -11,8 +11,9 @@
      * console.log planetsArray to check your work
      */
 
-    // console.log(planetsArray);
-
+    console.log(planetsArray);
+    planetsString = planetsArray.join("<br>")
+    console.log(planetsString)
     /**
      * TODO:
      * Create a string with <br> tags between each planet. console.log() your
