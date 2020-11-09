@@ -163,7 +163,15 @@ if(conf == true){
 
 
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
-
+function stopLight(light){
+    if(light == "green"){
+        alert("Thundercats are gooooo!")
+    }else if(light == "yellow"){
+        alert("Slow yer horses!")
+    }else{
+        alert("Red means STOP.")
+    }
+}
 
 
 
@@ -211,7 +219,7 @@ if(conf == true){
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
-
+var message = ("rainy") ? "It's rainy" : "Have a nice day"
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
