@@ -127,8 +127,7 @@ analyzeColorSwitch(askcolor);
             discountRate = 0;
         }
         var discount = discountRate * total;
-        var checkout = total - discount;
-        return checkout;
+        return total - discount;
 }
 
 /**
