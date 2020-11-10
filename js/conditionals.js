@@ -79,7 +79,7 @@ function analyzeColorSwitch(input){
             alert("Many things that people call 'blue' are actually indigo");
             break;
         default:
-            alert("I'm sorry, you didn't pick red, blue, or cyan");
+            alert("I'm sorry, I don't have much to say about "+input+".");
             break;
 }}
 /**
@@ -89,7 +89,7 @@ function analyzeColorSwitch(input){
  * function to show it to the user.
  */
 var askcolor = prompt("Please pick a color from the rainbow [red, orange, yellow, green, blue, indigo, violet]");
-var colormessage = analyzeColorSwitch(askcolor);
+analyzeColorSwitch(askcolor);
 /* ########################################################################## */
 
 /**
