@@ -8,8 +8,16 @@ function analyzeColor(color){
          return "Blue is the color of the sky";
     }else if(color == "cyan"){
          return "I don't know anything about cyan";
-    }else{
-         return "I'm sorry, your color isn't red, blue, or cyan";
+    } else if(color == "orange"){
+        return "Topaz are orange"
+    }else if(color == "green"){
+        return "Peridot are green"
+    }else if(color == "yellow"){
+        return "Jasper is yellow"
+    }else if(color == "indigo"){
+        return "Indigo was the color of royalty"
+    } else{
+         return "I'm sorry, I don't have an opinion about "+ color;
     }
 };
 /**
@@ -47,21 +55,33 @@ console.log(analyzeColor(randomColor));
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-var colorChoice = prompt("What is your favorite color?");
-switch(colorChoice){
-    case "red":
-        alert("Strawberries are red");
-        break;
-    case "blue":
-        alert("The sky is blue");
-        break;
-    case "cyan":
-        alert("The sea is cyan.");
-        break;
-    default:
-        alert("I'm sorry, you didn't pick red, blue, or cyan");
-        break;
-}
+function analyzeColorSwitch(input){
+    switch(input){
+        case "red":
+            alert("Strawberries are red");
+            break;
+        case "blue":
+            alert("The sky is blue");
+            break;
+        case "cyan":
+            alert("The sea is cyan.");
+            break;
+        case "orange":
+            alert("Robin's breasts are actually orange");
+            break;
+        case "yellow":
+            alert("Sunflowers are yellow.");
+            break;
+        case "green":
+            alert("Chlorophyll makes plants green.");
+            break;
+        case "indigo":
+            alert("Many things that people call 'blue' are actually indigo");
+            break;
+        default:
+            alert("I'm sorry, you didn't pick red, blue, or cyan");
+            break;
+}}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -69,8 +89,7 @@ switch(colorChoice){
  * function to show it to the user.
  */
 var askcolor = prompt("Please pick a color from the rainbow [red, orange, yellow, green, blue, indigo, violet]");
-var colormessage = analyzeColor(askcolor);
-alert(colormessage);
+var colormessage = analyzeColorSwitch(askcolor);
 /* ########################################################################## */
 
 /**
