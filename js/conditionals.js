@@ -162,10 +162,12 @@ alert("Hello, your lucky number was "+ luckyNumber +". Your price pre-discount w
  * HINT: The way we prompt for a value could be improved
  */
 function askNumber(){
-    confirm("Would you like to pick a number?");
+    var answer= confirm("Would you like to pick a number?");
+    return answer;
 }
 function chooseNumber(){
-    prompt("Please pick an integer");
+    var numAnswer = prompt("Please pick an integer");
+    return numAnswer;
 }
 
 function isOdd(number){
