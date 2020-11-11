@@ -60,3 +60,29 @@ function randomNegativeOddNumber(){
     }
     return randomNumber;
 }
+var positiveEvenNumber =  randomPositiveEvenNumber();
+var positiveOddNumber = randomPositiveOddNumber();
+var negativeEvenNumber = randomNegativeEvenNumber();
+var negativeOddNumber = randomNegativeOddNumber();
+
+//11
+function addOne(num){
+    return num + 1;
+}
+console.log(positiveEvenNumber);
+console.log(addOne(positiveEvenNumber));
+console.log(negativeOddNumber);
+console.log(addOne(negativeOddNumber));
+
+//12
+function isPositive(num){
+    return num>0;
+}
+console.log(isPositive(0.25));
+console.log(isPositive(-.5));
+console.log(positiveOddNumber);
+console.log(isPositive(positiveOddNumber));
+console.log(negativeEvenNumber);
+console.log(isPositive(negativeEvenNumber));
+
+//13
