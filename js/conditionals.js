@@ -186,8 +186,10 @@ function plus100 (number){
 function negOrPos(number){
     if (number>0){
         alert("Your number is positive!")
-    }else{
+    }else if(number<0){
         alert("Your number is negative.")
+    }else if(number == 0){
+        alert("Zero is neither negative nor positive.")
     }
 };
 
