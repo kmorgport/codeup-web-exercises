@@ -86,3 +86,27 @@ console.log(negativeEvenNumber);
 console.log(isPositive(negativeEvenNumber));
 
 //13
+function isNegative(num){
+    return num<0;
+}
+console.log(positiveOddNumber);
+console.log(positiveEvenNumber);
+console.log(negativeEvenNumber);
+console.log(negativeOddNumber);
+console.log(isNegative(positiveOddNumber));
+console.log(isNegative(positiveEvenNumber));
+console.log(isNegative(negativeEvenNumber));
+console.log(isNegative(negativeOddNumber));
+
+//14
+function isOdd(num){
+    return num%2 != 0;
+}
+console.log(positiveOddNumber);
+console.log(positiveEvenNumber);
+console.log(negativeEvenNumber);
+console.log(negativeOddNumber);
+console.log(isOdd(positiveOddNumber));
+console.log(isOdd(positiveEvenNumber));
+console.log(isOdd(negativeOddNumber));
+console.log(isOdd(negativeEvenNumber));
