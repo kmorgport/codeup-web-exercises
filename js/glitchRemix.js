@@ -28,3 +28,35 @@ console.log(fruits);
 //10
 var fruitsAndVeggies = fruits.concat(vegetables);
 console.log(fruitsAndVeggies);
+
+function randomPositiveEvenNumber(){
+    var randomNumber = Math.ceil(Math.random()*100)+10;
+    if(randomNumber % 2 !== 0){
+        return randomPositiveEvenNumber();
+    }
+    return randomNumber;
+}
+
+function randomPositiveOddNumber(){
+    var randomNumber = Math.ceil(Math.random()*100)+10;
+    if(randomNumber % 2 === 0){
+        return randomPositiveOddNumber();
+    }
+    return randomNumber;
+}
+
+function randomNegativeEvenNumber(){
+    var randomNumber = Math.ceil(Math.random()* -100)-10;
+    if(randomNumber % 2 === 0){
+        return randomNumber;
+    }
+    return randomNegativeEvenNumber();
+}
+
+function randomNegativeOddNumber(){
+    var randomNumber = Math.ceil(Math.random()*-100)-10;
+    if(randomNumber % 2 === 0){
+        return randomNegativeOddNumber();
+    }
+    return randomNumber;
+}
