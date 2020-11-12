@@ -110,3 +110,5 @@ console.log(isOdd(positiveOddNumber));
 console.log(isOdd(positiveEvenNumber));
 console.log(isOdd(negativeOddNumber));
 console.log(isOdd(negativeEvenNumber));
+
+console.log("Repot testing");
