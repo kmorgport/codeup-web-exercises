@@ -23,4 +23,8 @@ function uniqueInOrder(iterable){
     }
     return result;
 }
-console.log(uniqueInOrder([1,2,2,3,3]))
+
+function addBinary(a,b){
+   var res = a+b;
+   return parseInt(res,10).toString(2);
+}
