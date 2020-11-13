@@ -1,18 +1,20 @@
 function skippitySkip(){
-    var numChoice = chooseNumber();
-    if(typeof(numChoice)=="undefined"||typeof(numChoice)!=="number"||numChoice>50||numChoice<3||numChoice%2==0){
-        do{numChoice=parseInt(prompt("Please pick an odd number between 1 and 50"))}
-        while(typeof(numChoice)!="number"||numChoice>50||numChoice<3||numChoice%2==0)
-        for(i=1; i<50; i+=2){
+    var numChoice = prompt("Pick an odd number between 1 and 50");
+    parseInt(numChoice);
+    if(isNaN(numChoice)==1||numChoice>50||numChoice<3||numChoice%2==0){
+        do{numChoice = prompt("Pick an odd number between 1 and 50");
+            parseInt(numChoice);}
+        while(isNaN(numChoice)==1||numChoice>50||numChoice<3||numChoice%2==0)
+        for(let i=1; i<50; i+=2){
             if (i==numChoice){
                 console.log("Yikes! Skipping number: "+ i)
                 continue
             }
             console.log("Here is an odd number: "+i)
         }
-    }else{
+    }else {
 
-        for(i=1; i<50; i+=2){
+        for(let i=1; i<50; i+=2){
             if (i==numChoice){
                 console.log("Yikes! Skipping number: "+ i)
                 continue
@@ -21,11 +23,7 @@ function skippitySkip(){
         }
     }};
 
-function chooseNumber(){
-    var choice = prompt("Please pick an odd number between 1 and 50");
-    choice.toString();
-    parseInt(choice);
-    return choice;
-};
+skippitySkip();
+
 
 
