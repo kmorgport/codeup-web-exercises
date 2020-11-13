@@ -11,3 +11,16 @@ function uniqueChar(iterable){
     })
     return uniques;
 }
+
+
+function uniqueInOrder(iterable){
+    var result = [];
+    for(let i = 0; i<iterable.length; i++){
+        result.push(iterable[i]);
+        if(result[result.length-2]==result[result.length-1]){
+            result.pop();
+        }
+    }
+    return result;
+}
+console.log(uniqueInOrder([1,2,2,3,3]))
