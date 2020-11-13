@@ -4,7 +4,6 @@ function showMultiplicationTable(num){
     }
 }
 
-var random = Math.floor(Math.random()*(200-20 +1)+20);
 
 function isOddOrEven(){
     for(var i = 0; i<10; i++){
