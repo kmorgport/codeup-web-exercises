@@ -125,3 +125,25 @@ var negativeOddNumber = randomNegativeOddNumber();
 // console.log(isEven(negativeOddNumber));
 // console.log(negativeEvenNumber);
 // console.log(isEven(negativeEvenNumber));
+
+//16
+function isIdentity(input){
+    return
+}
+console.log(isIdentity(positiveEvenNumber))
+
+// //17
+// function isPositiveOdd(input){
+//     return ((input%2!=0)&&(input>0))
+// };
+//
+// console.log(positiveOddNumber);
+// console.log(isPositiveOdd(positiveOddNumber))
+// console.log(positiveEvenNumber);
+// console.log(isPositiveOdd(positiveEvenNumber))
+// console.log(negativeOddNumber);
+// console.log(isPositiveOdd(negativeOddNumber));
+// console.log(negativeEvenNumber);
+// console.log(isPositiveOdd(negativeEvenNumber));
+
+//18
