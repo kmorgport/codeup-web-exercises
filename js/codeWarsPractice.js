@@ -56,7 +56,11 @@ function validatePIN(pin) {
 // }
 function pigIt(str){
     let piggy = str.split(' ');
-    console.log(piggy)
+    let longer = [];
+    for(let i= 0; i<piggy.length;i++){
+        longer.push(piggy[i].split(''));
+    }
+    console.log(longer)
 
 }
 pigIt('Pig latin is cool')
