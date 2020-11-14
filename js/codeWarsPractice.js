@@ -30,12 +30,13 @@ function addBinary(a,b){
 }
 
 function validatePIN(pin) {
-    if(pin.match(/[^0-9]/)){
+    if(typeof(parseInt(pin))!="number"){
         return false
-    }else if(pin.length!=4||pin.length!=6){
+    }else if(pin.match(/[^0-9]/)){
         return false
-    }else{
+    }else if(pin.length==4||pin.length==6){
         return true
+    }else{
+        return false
     }
-
 }
