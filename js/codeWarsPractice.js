@@ -61,6 +61,11 @@ function pigIt(str){
         longer.push(piggy[i].split(''));
     }
     console.log(longer)
-
+    for(let i=0; i<longer.length; i++){
+        var a;
+        a = longer[i].shift();
+        longer[i].push(a+'ay');
+        longer.flat();
+    }
 }
 pigIt('Pig latin is cool')
