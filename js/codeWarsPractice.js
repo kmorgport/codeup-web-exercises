@@ -61,11 +61,15 @@ function pigIt(str){
         longer.push(piggy[i].split(''));
     }
     console.log(longer)
-    for(let i=0; i<longer.length; i++){
+    var sentence = [];
+    for(let i=0; i<longer.length; i++) {
         var a;
         a = longer[i].shift();
-        longer[i].push(a+'ay');
-        longer.flat();
+        longer[i].push(a + 'ay');
+        sentence.push(longer[i].join(''))
     }
+    var newSent = sentence.join(' ');
+
+return newSent
 }
 pigIt('Pig latin is cool')
