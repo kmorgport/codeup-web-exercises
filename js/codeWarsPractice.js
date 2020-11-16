@@ -55,12 +55,15 @@ function validatePIN(pin) {
 //     return -1;
 // }
 function pigIt(str){
-    let piggy = str.split(' ');
+    var regex=/[!,.?]/g;
+    var purged = str.replace(regex,'');
+    let piggy = purged.split(' ');
     let longer = [];
+    var punc='';
+    console.log(piggy)
     for(let i= 0; i<piggy.length;i++){
         longer.push(piggy[i].split(''));
     }
-    console.log(longer)
     var sentence = [];
     for(let i=0; i<longer.length; i++) {
         var a;
@@ -69,7 +72,30 @@ function pigIt(str){
         sentence.push(longer[i].join(''))
     }
     var newSent = sentence.join(' ');
-
-return newSent
+    if(str.includes("!")){
+        punc="!";
+    }else if(str.includes(".")){
+        punc=".";
+    }else if(str.includes("?")){
+        punc = "?"
+    }
+    newSent+=punc
+console.log(newSent);
 }
-pigIt('Pig latin is cool')
+pigIt('Pig latin is cool ')
+
+// function countTime(num){
+//     var start = Date.now();
+//     console.log("Counting from 1 to "+num);
+//     for (var i = 0; i<num;i++){}
+//     var end = Date.now();
+//     console.log("done!");
+//     console.log("it took "+ (end-start)+" milliseconds");
+// }
+
+// function punctuationPrac(str){
+//     var regex=/[!,.]/g;
+//     var purged = str.replace(regex,'');
+//     console.log(purged)
+// }
+// punctuationPrac('Pig latin is cool!')
