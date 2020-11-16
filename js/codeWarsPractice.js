@@ -56,33 +56,51 @@ function validatePIN(pin) {
 // }
 function pigIt(str){
     var regex=/[!,.?]/g;
-    var purged = str.replace(regex,'');
-    let piggy = purged.split(' ');
+    //trim any empty bits
+    var trimmed = str.trim();
+    //peels off punctuation
+    var purged = trimmed.replace(regex,'');
+    var purgeTrim = purged.trim();
+    //turns string into an array where each element is a word
+    let piggy = purgeTrim.split(' ');
+    //sets up next array we will use
     let longer = [];
+    //possible punctuation holder
     var punc='';
-    console.log(piggy)
+    //turns your array of words into an arry of arrays where each sub-array is an array of individual letters
     for(let i= 0; i<piggy.length;i++){
         longer.push(piggy[i].split(''));
     }
+    //create array for edited sentence
     var sentence = [];
+    //iterates over the sub-arrays to piglatinify them
     for(let i=0; i<longer.length; i++) {
         var a;
         a = longer[i].shift();
         longer[i].push(a + 'ay');
+        //rejoins each sub element array back into word and moves the newly fused array back up one level
         sentence.push(longer[i].join(''))
     }
+    //fuses the one dimensional array back into sentence
     var newSent = sentence.join(' ');
+    //checks original string for punctuation to add it back to the PLified string
     if(str.includes("!")){
-        punc="!";
+        punc=" !";
     }else if(str.includes(".")){
         punc=".";
     }else if(str.includes("?")){
-        punc = "?"
+        punc = " ?"
     }
     newSent+=punc
-console.log(newSent);
+return newSent;
 }
-pigIt('Pig latin is cool ')
+pigIt('Pig latin is cool !')
+
+/* elegant solution
+function pigIt(str){
+  return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+}
+ */
 
 // function countTime(num){
 //     var start = Date.now();
