@@ -24,5 +24,13 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+    var ul = document.createElement("ul")
+    planetsArray.forEach( planet =>{
+        var li = document.createElement("li");
+        li.setAttribute("class","list1");
+        li.innerText = planet;
+        ul.appendChild(li)
+})
+    document.body.appendChild(ul)
 
 })();
