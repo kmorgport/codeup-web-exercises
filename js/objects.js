@@ -43,12 +43,20 @@ console.log(person.sayHello());
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+shoppers.forEach(function(shopper){
+    var total = 0
+    if(shopper.amount>200){
+        total = shopper.amount - (shopper.amount*.12);
+        console.log(shopper.name+" owed $"+shopper.amount+" before the discount. They now owe $"+total+" .")
+    }else{
+        console.log(shopper.name+" owes $"+shopper.amount+".");
+    }
+})
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -61,7 +69,19 @@ console.log(person.sayHello());
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    var books = [
+        {firstName: 'J.D.', lastName: 'Salinger' , title: 'Catcher in the Rye'},
+        {firstName: 'J.R.R', lastName: 'Tolkien' , title: 'The Hobbit'},
+        {firstName: 'Tennessee', lastName: 'Williams' , title: "A Streetcar Named Desire"},
+        {firstName: 'Harper', lastName:'Williams', title:'To Kill A Mockingbird'},
+        {firstName:'Alexandre', lastName:'Dumas', title:'The Three Musketeers'}
+    ];
+    books.forEach(function(book,i){
+        console.log("Book # "+(i+1));
+        console.log("Title: "+book.title);
+        console.log("Author: "+book.firstName + ' '+book.lastName);
+        console.log("---");
+    })
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -97,5 +117,4 @@ console.log(person.sayHello());
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
 })();
