@@ -117,3 +117,21 @@ function pigIt(str){
 //     console.log(purged)
 // }
 // punctuationPrac('Pig latin is cool!')
+/*how many times will the person in the window see the ball bounce if the 'bounce' represents how much the height degrades each time */
+//bouncingBall(3.0, 0.66, 1.5), 3
+function bouncingBall(h, bounce, window){
+    if(h>0 && ((bounce>0)&&(bounce<1)) && window<h){
+    let counter = 0;
+    while(h>window){
+        counter++
+        h *= bounce;
+        if(h>window){
+            counter++;
+        }
+    }
+    console.log(counter);
+}else{
+        counter = -1
+    console.log(counter)
+}}
+bouncingBall(1.0,0.66,1.5);
