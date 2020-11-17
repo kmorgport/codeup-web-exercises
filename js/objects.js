@@ -106,7 +106,24 @@ shoppers.forEach(function(shopper){
      *      ---
      *      ...
      */
+function createBook(firstName, lastName, title){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.title = title;
+    }
+    let newBook = new createBook('Gaston', 'LeRoux', 'The Phantom of the Opera');
+    console.log(newBook);
+    books.push(newBook)
 
+function showBookInfo(book){
+        for(let i =0;i<book.length;i++){
+            console.log("Book # "+(i+1));
+            console.log("Title: "+book[i].title);
+            console.log("Author: "+book[i].firstName + ' '+book[i].lastName);
+            console.log("---");
+
+    }}
+    showBookInfo(books);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
