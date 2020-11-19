@@ -5,8 +5,6 @@
 }
 .column{
     flex: 25%;
-    max-width: 25%;
-    max-height:25%;
     padding: 0 4px;
 }
 .column img{
