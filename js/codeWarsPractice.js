@@ -135,3 +135,21 @@ function bouncingBall(h, bounce, window){
     console.log(counter)
 }}
 bouncingBall(1.0,0.66,1.5);
+
+function rgb(r, g, b){
+    //checks to see if argument is between 0 and 255
+    function componentToHex(c){
+        if(c>255){
+            c = 255
+        }else if(c < 0){
+            c = 0
+        }
+        //changes number into a hex code
+        let hex = c.toString(16);
+        //if the hex length is one, it adds a 0, otherwise, just
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+    let color = componentToHex(r).toUpperCase()+ componentToHex(g).toUpperCase() + componentToHex(b).toUpperCase();
+    let cured = color.slice(0,6);
+    return cured;
+}
