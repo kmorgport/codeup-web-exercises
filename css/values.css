@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: 'Ruslan Display', cursive;
 }
+html{
+    background-color: black;
+}
 
 main {
     width: 100vw;
