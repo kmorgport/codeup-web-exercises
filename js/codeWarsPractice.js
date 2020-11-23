@@ -153,3 +153,8 @@ function rgb(r, g, b){
     let cured = color.slice(0,6);
     return cured;
 }
+
+function arrayDiff(a,b) {
+    let difference = a.filter(x => !b.includes(x));
+    return difference;
+}
