@@ -39,7 +39,6 @@ h2, h3 {
 section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 1em;
     margin-top: 1em;
     /* enter needed declarations here */
@@ -49,6 +48,7 @@ section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     align-items: center;
+    justify-content: space-between;
     /* enter needed declarations here */
 }
 section:nth-of-type(1) div:last-child {
@@ -124,9 +124,9 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
-    align-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     /* enter needed declarations here */
 }
 
