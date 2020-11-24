@@ -62,18 +62,19 @@ a {
     top: 230px;
 }
 .profile-details{
-    width:calc(25% - .5em);
+    width:calc(25% - 1em);
     float: left;
 }
 .timeline{
     margin-left: .5em;
     margin-right: .5em;
-    width:calc(50% - .5em);
+    width:calc(50% - 1em);
     float: left;
 }
 .who-to-follow{
     margin-left: .5em;
-    width:calc(25% - .5em);
+    margin-right: .5em;
+    width:calc(25% - 1em);
     float: right;
     clear: right;
 }

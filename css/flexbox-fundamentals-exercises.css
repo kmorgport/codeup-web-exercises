@@ -11,7 +11,7 @@ h1 {text-align: center;}
 
 h2, h3 {
     padding: 0;
-    margin: 0em;
+    margin: 0;
 }
 
 .container {
@@ -39,7 +39,7 @@ h2, h3 {
 section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 1em;
     margin-top: 1em;
     /* enter needed declarations here */
@@ -85,6 +85,7 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) h3 {
     align-items: center;
+    flex-grow:1;
     /* enter needed declarations here */
 
 }
@@ -110,6 +111,7 @@ section:nth-of-type(3) h3 {
 }
 
 section:nth-of-type(5) {
+    justify-content: space-evenly;
     /* enter needed declarations here */
 }
 
@@ -124,7 +126,7 @@ section:nth-of-type(6) {
     height: 14em;
     align-content: space-between;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
     /* enter needed declarations here */
 }
 
