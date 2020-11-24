@@ -62,8 +62,6 @@ a {
     top: 230px;
 }
 .profile-details{
-    margin-left: .5em;
-    margin-right: .5em;
     width:calc(25% - .5em);
     float: left;
 }
@@ -75,9 +73,9 @@ a {
 }
 .who-to-follow{
     margin-left: .5em;
-    margin-right: .5em;
     width:calc(25% - .5em);
     float: right;
+    clear: right;
 }
 .media{
     width: 100%;

@@ -154,7 +154,22 @@ function rgb(r, g, b){
     return cured;
 }
 
+
+//Finds the difference between two arrays
 function arrayDiff(a,b) {
     let difference = a.filter(x => !b.includes(x));
+    //a.filter sets the function that a's elements will be filtered thru
+    //!b.includes makes it return all elements of a that b does not contain
     return difference;
 }
+
+// //finds intersection of two arrays
+// function arrayIntersect(a,b){
+//     let intersection = a.filter(x=>b.includes(x));
+//     return intersection
+// }
+//
+// //find symmetric difference
+// function arraySymmetry(a,b){
+//     let difference = a.filter(x=>!b.includes(x)).concat(b.filter(x=>!a.includes(x)))
+// }
