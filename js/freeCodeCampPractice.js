@@ -100,19 +100,33 @@ var contacts = [
 ];
 
 
-function lookUpProfile(name, prop) {
-// Only change code below this line
-    //run thru each object
-    for (let i = 0; i < contacts.length; i++) {
-        //check if name is in firstname property of object
-        if (contacts[i].firstName === name) {
-            //check if property is within the named object
-            if (prop in contacts[i]) {
-                return contacts[i][prop];
-                //if not return no such property
-            } else return "No such property";
-            //if loop runs with no conditional being triggered, return this statement
-        }else return "No such contact"
-    }
-}
-lookUpProfile("Akira", "likes");
+// function lookUpProfile(name, prop) {
+// // Only change code below this line
+//     //run thru each object
+//     for (let i = 0; i < contacts.length; i++) {
+//         //check if name is in firstname property of object
+//         if (contacts[i].firstName === name) {
+//             //check if property is within the named object
+//             if (prop in contacts[i]) {
+//                 return contacts[i][prop];
+//                 //if not return no such property
+//             } else return "No such property";
+//             //if loop runs with no conditional being triggered, return this statement
+//         }else return "No such contact"
+//     }
+// }
+// lookUpProfile("Akira", "likes");
+
+// //working with Math.random()
+// //Math.random returns a random decimal, multiply it against the integer for the non-inclusive range you want then Math.floor it
+// Math.floor(Math.random()*20)
+
+//creating your own range of numbers
+// function myOwnRandomNum(myMax,myMin) {
+//     //the max and min are the boundaries of your range;
+//     //multiplying the difference of said range plus 1 creates an inclusive bottom, adding myMin creates an inclusive top range
+//     return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+// }
+
+//parseInt can also be used to parse non-decimal numbers (binary, hex, etc)
+// parseInt("11", 2)
