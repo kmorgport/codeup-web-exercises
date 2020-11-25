@@ -160,3 +160,14 @@ function countDown(n){
         return countArray;
     }
 }
+function rangeOfNumbers(startNum, endNum){
+    if(startNum-endNum === 0){
+        return[startNum];
+    }else{
+        const nums = rangeOfNumbers(startNum+1, endNum);
+        //when the recursion is additive(startNum '+') you need to use unshift to create an increasing array
+        nums.unshift(startNum);
+        return nums;
+    }
+}
+console.log(rangeOfNumbers(1,5))
