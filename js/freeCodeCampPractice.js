@@ -63,10 +63,56 @@ var collection = {
 // }while(i<=10)
 
 //attempt your first recursive code
-function sum(arr, n){
-    if(n<=0){
-        return 0
-    }else {
-        return sum(arr, n-1)+ arr[n-1]
+// function sum(arr, n){
+//     if(n<=0){
+//         return 0
+//     }else {
+//         return sum(arr, n-1)+ arr[n-1]
+//     }
+// }
+
+// Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(name, prop) {
+// Only change code below this line
+    //run thru each object
+    for (let i = 0; i < contacts.length; i++) {
+        //check if name is in firstname property of object
+        if (contacts[i].firstName === name) {
+            //check if property is within the named object
+            if (prop in contacts[i]) {
+                return contacts[i][prop];
+                //if not return no such property
+            } else return "No such property";
+            //if loop runs with no conditional being triggered, return this statement
+        }else return "No such contact"
     }
 }
+lookUpProfile("Akira", "likes");
