@@ -25,5 +25,14 @@
 //     "use strict";
 //     return arr1.concat(arr2);
 // };
-//if there is only parameter you do not need to use the parenthesis
-const myConcat = (arr1, arr2) => arr1.concat(arr2);
+// //if there is only parameter you do not need to use the parenthesis
+// const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+// //using the rest parameter(...args)
+// const sum = (x, y, z) => {
+//     const args = [x, y, z];
+//     return args.reduce((a, b) => a + b, 0);
+// }
+
+//...args allows for entering multiple arguments which will be represented as an array. As the function body is now only a return value, the curly brackets can now also be implied and therefore dropped
+const sum = (...args)=> args.reduce((a,b)=> a+b,0)
