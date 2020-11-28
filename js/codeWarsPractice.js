@@ -173,3 +173,4 @@ function arrayDiff(a,b) {
 // function arraySymmetry(a,b){
 //     let difference = a.filter(x=>!b.includes(x)).concat(b.filter(x=>!a.includes(x)))
 // }
+
