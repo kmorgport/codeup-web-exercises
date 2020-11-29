@@ -34,3 +34,19 @@ function arrayTally(arr){
 }
 console.log(arrayTally([1, -6, 5, 4, 3, -7, -10, 201, -3]))
 console.log(arrayTally([-3,11,-45,64, 8, -47]))
+
+function swapvals(str, char){
+    var arr = []
+    for(var i = 0; i<str.length; i++){
+        var count = 0
+        for(var j=0; j<str.length; j++){
+            if(str[i]==str[j]){
+                count++
+            }
+        }arr.push(count)
+    }
+    console.log(arr);
+    console.log(arr.join(char))
+
+}
+swapvals("hello world","-")
