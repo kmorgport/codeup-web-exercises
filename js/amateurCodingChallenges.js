@@ -52,5 +52,18 @@ function swapvals(str, char){
 swapvals("hello world","-");
 
 function phoneBookSorter(str){
-
+    var newarr = str.split(';');
+    var arr2 =[];
+    for(let i=0 ; i<newarr.length; i++){
+        arr2.push(newarr[i].split(':'));
+    }
+    for (let i=0; i<arr2.length; i++){
+        [arr2[i][0], arr2[i][1]] = [arr2[i][1], arr2[i][0]]
+    }
+    arr2.sort()
+    var arrFinal = arr2.join(")(");
+    console.log(arrFinal)
+    var final = "("+arrFinal+")"
+    console.log(final.toUpperCase())
 }
+phoneBookSorter("Travis:Meyer;Gene:Carangal;Tom:Young;Jeff:Meyer")

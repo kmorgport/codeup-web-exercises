@@ -93,13 +93,15 @@
     }
 
     .main{
+       width: 200px;
         float: left;
         margin: 10px;
 
     }
     .sub-section{
+        width: 200px;
         float: left;
-        display: inline-block;
+        margin-right: 10px;
 
     }
 
