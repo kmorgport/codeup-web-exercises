@@ -59,6 +59,55 @@
     }
 }
 
-@media screen and (min-width:768px) {
-    *{}
+@media screen and (min-width:701px) and (max-width:2000px) {
+    .alert-info{
+        display: none;
+    }
+    h1{
+        position: relative;
+        top: 60px;
+
+    }
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li{
+        float: right;
+    }
+    li a{
+        display: block;
+        color: blue;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+
+    }
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .main{
+        float: left;
+        margin: 10px;
+
+    }
+    .sub-section{
+        float: left;
+        display: inline-block;
+
+    }
+
+    footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+    }
 }
