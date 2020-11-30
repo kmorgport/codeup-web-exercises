@@ -1,12 +1,36 @@
 @media screen and (min-width:339px) and (max-width:700px){
     .alert-info{
-        background-color: teal;
+        background-color: lightblue;
+        color: gray;
+        border: 1px solid lightgray;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        height: 3em;
+        justify-content: center;
 
     }
     h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3em;
+        margin: auto;
 
     }
     .nav-links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    li{
+        display: flex;
+        align-self: stretch;
+        background-color: grey;
+        margin: 1em;
+        height: 3em;
+        color: blue;
 
     }
     .header-img{
