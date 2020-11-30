@@ -1,4 +1,5 @@
 @media screen and (min-width:339px) and (max-width:700px){
+
     .alert-info{
         background-color: lightblue;
         color: gray;
@@ -21,25 +22,36 @@
     .nav-links{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        list-style-type: none;
+        margin: 1em;
+        padding: 0;
+        width: auto;
+        height: auto;
+
 
     }
     li{
-        display: flex;
-        align-self: stretch;
-        background-color: grey;
+        display: inline-block;
+        color: black;
+        background-color: lightgray;
         margin: 1em;
-        height: 3em;
-        color: blue;
+        border: 1px solid black;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-align: center;
 
     }
-    .header-img{
-
+    img{
+        height: 100%;
+        width: 100%;
     }
     .main{
+        display: inline-block;
 
     }
     .sub-section{
+        display: inline-block;
+        font-style: italic;
 
     }
     footer{
