@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <title>Title</title>
 </head>
 <body>
-<div class="bs-example">
+<div>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <a href="#" class="navbar-brand text-muted">Pizza World</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -35,6 +36,7 @@
             </div>
         </div>
     </nav>
+</div>
     <container>
         <div class="jumbotron jumbotron-fluid .d-none .d-sm-block" style="background-image: url('img/pizza.png')">
             <div class="container-fluid">
@@ -43,22 +45,25 @@
         </div>
 
 
+
         <!--edit typeface for h2 here -->
+        <div>
         <h2>Build your own pizza!</h2>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="size_and_crust" data-toggle="tab" href="#sizeCrust" aria-controls="sizeCrust" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
+                    <a class="nav-link active" id="crustTab" role="tab" data-toggle="tab" href="#sizeCrust" aria-controls="sizeCrust-tab" ><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" id="cheese_and_sauce" data-toggle="tab" href="#cheeseSauce" aria-controls="cheeseSauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
+                    <a class="nav-link" id="cheeseTab" data-toggle="tab" role="tab" href="#cheeseSauce" aria-controls="cheeseSauce-tab"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" id="toppings" data-toggle="tab" href="#pizzaToppings" aria-controls="pizzaToppings" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+                    <a class="nav-link" id="toppingsTab" role="tab" data-toggle="tab" href="#pizzaToppings" aria-controls="pizzaToppings-tab"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
                 </li>
             </ul>
 
         <!-- Card Portion -->
-        <div class="card">
+<div class="tab-content" id="myTabContent">
+    <div class=" card tab-pane fade show active" role="tabpanel" aria-labelledby="sizeCrust-tab" id="sizeCrust">
             <div class="card-header bg-primary text-white">
                 Choose Size and Crust
             </div>
@@ -110,10 +115,8 @@
             </div>
         </div>
 
-
 <!--Cheese and Sauce Portion -->
-
-            <div class="card">
+    <div class="card tab-pane fade" id="cheeseSauce" role="tabpanel" aria-labelledby="cheeseSauce-tab">
                 <div class="card-header bg-primary text-white">
                     Choose Cheese and Sauce
                 </div>
@@ -149,6 +152,7 @@
                             <option>Normal</option>
                             <option>Extra</option>
                         </select>
+                    </ul>
                         <div class="card-body text-right">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-primary">< Previous Step</button>
@@ -156,9 +160,9 @@
                             </div>
                         </div>
             </div>
-            </div>
-
-                <div class="card">
+    </div>
+        <div class="card tab-pane fade" id="pizzaToppings" role="tabpanel" aria-labelledby="pizzaToppings-tab">
+                <div>
                     <div class="card-header bg-primary text-white">
                         Choose Toppings
                     </div>
@@ -240,11 +244,10 @@
                         <button type="button" class="btn btn-primary text-right">Checkout</button>
                     </div>
                 </div>
-                </div>
+    </div>
 
-
-
-
+</div>
+        </div>
     </container>
 </div>
 
