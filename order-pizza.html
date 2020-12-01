@@ -36,9 +36,74 @@
         </div>
     </nav>
     <container>
-        <div class="jumbotron jumbotron-fluid" style="background-image: url('img/pizza.png')">
-            <div class="container">
+        <div class="jumbotron jumbotron-fluid .d-none .d-sm-block" style="background-image: url('img/pizza.png')">
+            <div class="container-fluid">
                 <h1>Welcome to Pizza World</h1>
+            </div>
+        </div>
+        <!--edit typeface for h2 here -->
+        <h2>Build your own pizza!</h2>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="size_and_crust" data-toggle="tab" href="#sizeCrust" aria-controls="sizeCrust" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="cheese_and_sauce" data-toggle="tab" href="#cheeseSauce" aria-controls="cheeseSauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="toppings" data-toggle="tab" href="#pizzaToppings" aria-controls="pizzaToppings" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+                </li>
+            </ul>
+        <div class="card" >
+            <div class="card-header">
+                Choose Size and Crust
+            </div>
+            <div class="card m-auto w-75">
+                <div class="card-header">
+                    Hand Tossed
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Garlic seasoned with a rich, buttery taste</li>
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="crust" id="handTossed1" value="option1" checked>
+                            <label class="form-check-label" for="handTossed1">
+                                Small (10")
+                            </label>
+                        </div></li>
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="crust" id="handTossed2" value="option2">
+                            <label class="form-check-label" for="HandTossed2">
+                                Medium(12")
+                            </label>
+                        </div>
+                    </li></ul>
+            </div>
+            <div class="card m-auto w-75">
+                <div class="card-header">
+                    Crispy Thin
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio</li>
+                    <li class="list-group-item">
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="crust" id="crispyRadio1" value="option3" checked>
+                    <label class="form-check-label" for="crispyRadio1">
+                        Medium (12")
+                    </label>
+                    </div></li>
+                    <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="crust" id="crispyRadio2" value="option4">
+                    <label class="form-check-label" for="crispyRadio2">
+                        Large (14")
+                    </label>
+                </div>
+                    </li></ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
             </div>
         </div>
     </container>
