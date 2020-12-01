@@ -1,0 +1,20 @@
+
+<!-- Figure out why the below Tab Forms wouldn't coordinate with the tab-card tags -->
+<h2>Build your own pizza!</h2>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="crustTab" role="tab" data-toggle="tab" href="#sizeCrust" aria-controls="sizeCrust-tab" ><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="cheeseTab" data-toggle="tab" role="tab" href="#cheeseSauce" aria-controls="cheeseSauce-tab"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="toppingsTab" role="tab" data-toggle="tab" href="#pizzaToppings" aria-controls="pizzaToppings-tab"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+    </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+    <div class=" card tab-pane fade show active" role="tabpanel" aria-labelledby="sizeCrust-tab" id="sizeCrust">
+
+        <div class="card tab-pane fade" id="cheeseSauce" role="tabpanel" aria-labelledby="cheeseSauce-tab">
+            <div class="card tab-pane fade" id="pizzaToppings" role="tabpanel" aria-labelledby="pizzaToppings-tab">
