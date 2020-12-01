@@ -62,7 +62,6 @@ function phoneBookSorter(str){
     }
     arr2.sort()
     var arrFinal = arr2.join(")(");
-    console.log(arrFinal)
     var final = "("+arrFinal+")"
     console.log(final.toUpperCase())
 }
