@@ -112,4 +112,34 @@ nav a {
         height: 146px;
         object-fit: cover;
     }
+
+    .icons{
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+    }
+
+    .red-d{
+        background-color: #e6563b;
+    }
+    .orange-d{
+        background-color: #eb9d3a;
+    }
+    .green-s{
+        background-color: #7cb06c;
+    }
+    .blue-h{
+        background-color: #00aba9;
+    }
+    .round{
+        height: 22px;
+        width: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #f0f0f0;
+        border-radius: 50px;
+    }
+
 }
