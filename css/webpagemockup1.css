@@ -112,6 +112,13 @@ nav a {
         height: 146px;
         object-fit: cover;
     }
+    .media img{
+        border: 5px solid #E6E6E6;
+        border-radius: 5px;
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+    }
 
     .icons{
         display: flex;
