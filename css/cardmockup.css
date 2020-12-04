@@ -132,8 +132,8 @@ nav a {
         background-color: #00aba9;
     }
     .round{
-        height: 22px;
-        width: 22px;
+        height: 18px;
+        width: 18px;
         display: flex;
         justify-content: center;
         align-items: center;
