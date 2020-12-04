@@ -1,0 +1,145 @@
+
+body {
+    font-family: "Abel", sans-serif;
+    background: #f0f0f0;
+}
+
+h1, h2, h3{
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+.nav-background {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 59px;
+    width: 100%;
+    top: 37px;
+    z-index: -1000;
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.brand-name {
+    font-size: 1.75em;
+}
+
+nav .nav-item {
+    position: relative;
+    bottom: 6px;
+}
+
+nav a {
+    font-size: .75em;
+    color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+.large-round{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    color: white;
+    border: 8px solid white;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em .25em;
+    flex-shrink: 0;
+}
+
+.icons-across-top{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#red-design{
+    background-color: #e6563b;
+}
+
+#yellow-develop{
+    background-color: #eb9d3a;
+}
+
+#green-support{
+    background-color: #7cb06c;
+
+}
+
+#blue-host{
+    background-color: #00aba9;
+
+}
+
+.headers{
+    margin-bottom: 2em;
+}
+
+.maxViewHeader{
+    display: none;
+}
+.smallHeader{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media screen and (min-width: 768px){
+    .smallHeader{
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        border: 5px solid #E6E6E6;
+        border-radius: 5px;
+        width: 205px;
+        height: 146px;
+        object-fit: cover;
+    }
+
+    .icons{
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+    }
+
+    .red-d{
+        background-color: #e6563b;
+    }
+    .orange-d{
+        background-color: #eb9d3a;
+    }
+    .green-s{
+        background-color: #7cb06c;
+    }
+    .blue-h{
+        background-color: #00aba9;
+    }
+    .round{
+        height: 18px;
+        width: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #f0f0f0;
+        border-radius: 50px;
+    }
+
+}
