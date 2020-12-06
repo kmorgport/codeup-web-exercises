@@ -84,8 +84,22 @@
 // }
 // birthdate('11/03/1981')
 
-function strToArr(str){
-    var newarr = str.split(' ');
-    console.log(newarr)
+// function strToArr(str){
+//     var newarr = str.split(' ');
+//     console.log(newarr)
+// }
+// strToArr("Trick or Treat")
+
+function countOccur(sent, word){
+    sent += '';
+    word += '';
+
+    if(word.length <= 0){
+        return word.length +1;
+    }
+
+    var wordTest = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return (sent.match(new RegExp(wordTest, 'gi'))|| []).length;
 }
-strToArr("Trick or Treat")
+
+console.log(countOccur("The pumpkin rolled down the hill and under someone’s car.", "the"));
