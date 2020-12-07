@@ -118,3 +118,8 @@ function tellmeDay(year){
         console.log('12.09.'+year.toString())
     }
 };
+tellmeDay(2016)
+tellmeDay(2020)
+tellmeDay(1800)
+tellmeDay(1984)
+tellmeDay(2017)
