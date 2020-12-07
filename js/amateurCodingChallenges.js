@@ -90,36 +90,46 @@
 // }
 // strToArr("Trick or Treat")
 
-function countOccur(sent, word){
-    sent += '';
-    word += '';
-
-    if(word.length <= 0){
-        return word.length +1;
-    }
-
-    var wordTest = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return (sent.match(new RegExp(wordTest, 'gi'))|| []).length;
-}
-
-console.log(countOccur("The pumpkin rolled down the hill and under someone’s car.", "the"));
-
-//timetravel planner
-function tellmeDay(year){
-    if(year<1917){
-        if(year%4){
-            console.log('01.09.'+year.toString())
-        }else{
-            console.log('31.08.'+year.toString())
-        }
-    }else if(year%4){
-        console.log('13.09.'+year.toString())
-    }else{
-        console.log('12.09.'+year.toString())
-    }
-};
-tellmeDay(2016)
-tellmeDay(2020)
-tellmeDay(1800)
-tellmeDay(1984)
-tellmeDay(2017)
+// function countOccur(sent, word){
+//     sent += '';
+//     word += '';
+//
+//     if(word.length <= 0){
+//         return word.length +1;
+//     }
+//
+//     var wordTest = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+//     return (sent.match(new RegExp(wordTest, 'gi'))|| []).length;
+// }
+//
+// console.log(countOccur("The pumpkin rolled down the hill and under someone’s car.", "the"));
+//
+// //timetravel planner
+// function tellmeDay(year){
+//     if(year<1917){
+//         if(year%4){
+//             console.log('01.09.'+year.toString())
+//         }else{
+//             console.log('31.08.'+year.toString())
+//         }
+//     }else if(year%4){
+//         console.log('13.09.'+year.toString())
+//     }else{
+//         console.log('12.09.'+year.toString())
+//     }
+// };
+// tellmeDay(2016)
+// tellmeDay(2020)
+// tellmeDay(1800)
+// tellmeDay(1984)
+// tellmeDay(2017)
+//
+// //sum of an array
+//
+// function arrSum(arr){
+//     var sum = arr.reduce(function(a,b){
+//         return a+b;
+//     },0);
+//     console.log(sum)
+// }
+// arrSum([1,2,3,4,10,11])
