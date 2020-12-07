@@ -103,3 +103,18 @@ function countOccur(sent, word){
 }
 
 console.log(countOccur("The pumpkin rolled down the hill and under someone’s car.", "the"));
+
+//timetravel planner
+function tellmeDay(year){
+    if(year<1917){
+        if(year%4){
+            console.log('01.09.'+year.toString())
+        }else{
+            console.log('31.08.'+year.toString())
+        }
+    }else if(year%4){
+        console.log('13.09.'+year.toString())
+    }else{
+        console.log('12.09.'+year.toString())
+    }
+};
