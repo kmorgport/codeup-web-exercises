@@ -40,3 +40,8 @@ for(let user of users){
     var threeUsers = users.filter(user=> user.languages.length >= 3)
 }
 console.log(threeUsers)
+
+for(let user of users){
+    var email = users.map(user=>user.email)
+}
+console.log(email)
