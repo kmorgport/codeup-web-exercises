@@ -25,20 +25,14 @@
         }
 
         detonationTimer--;
-    }
-    setInterval(updateTimer,interval);
 
+    }
+    var bomTime = setInterval(updateTimer,interval);
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
-    var delay = 4500;
     function defuseTheBOM() {
-        if(detonationTimer == 1){
-            detonationTimer = -1
-            alert("Phew! You saved us!");
-            document.body.innerHTML = '';
-        }
+       clearInterval(bomTime)
     }
-    setTimeout(defuseTheBOM, delay);
 
     // Don't modify anything below this line!
     //

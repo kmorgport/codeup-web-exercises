@@ -133,3 +133,9 @@
 //     console.log(sum)
 // }
 // arrSum([1,2,3,4,10,11])
+
+function compareTriplets(a,b){
+    var aCount = 0;
+    var bCount = 0;
+
+}

@@ -171,3 +171,21 @@ function rangeOfNumbers(startNum, endNum){
     }
 }
 console.log(rangeOfNumbers(1,5))
+
+//create a Thermometer object that holds the temp in fahrenheit and displays and accepts Celsius
+
+class Thermometet{
+    constructor(fahr) {
+        //sets fahrenheit upon initializing
+        this._fahr = fahr
+    }
+    //method to return temp in Celsius
+    get temperature(){
+        return (5/9) * (this._fahr - 32);
+    }
+    //when you set object.temperature = 22, it assumes its in 'celsius' feeds it below and then resets the 'fahr' property as the new value of this._fahr
+    set temperature(celsius){
+        this._fahr = (celisus * 9.0)/5 +32
+    }
+
+}
