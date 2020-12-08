@@ -44,4 +44,13 @@ console.log(threeUsers)
 for(let user of users){
     var email = users.map(user=>user.email)
 }
-console.log(email)
+console.log(email);
+
+for(let user of users){
+    var exp = users.map(user=>user.yearsOfExperience)
+    const sum = exp.reduce((accumulation, currentNumber)=>{
+        return accumulation + currentNumber;
+    },0)
+    var avg = sum/users.length
+}
+console.log(avg)
