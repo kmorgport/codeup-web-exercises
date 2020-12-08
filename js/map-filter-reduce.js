@@ -54,3 +54,15 @@ for(let user of users){
     var avg = sum/users.length
 }
 console.log(avg)
+
+for(let user of users){
+    var email = users.map(user=>user.email)
+    var strSplit = email.sort()
+}
+console.log(strSplit[0])
+
+for(let user of users){
+    var names = users.map(user=>user.name)
+    var namestr = "Your instructors are: "+ names.join(', ')+'.';
+}
+console.log(namestr)
