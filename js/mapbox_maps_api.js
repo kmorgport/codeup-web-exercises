@@ -6,9 +6,9 @@ var map = new mapboxgl.Map({
     center:[-96.7970, 32.7767]
 });
 
-var marker = new mapboxgl.Marker()
-.setLngLat([-96.7436, 32.9095])
-.addTo(map);
+// var marker = new mapboxgl.Marker()
+// .setLngLat([-96.7436, 32.9095])
+// .addTo(map);
 
 
 // var smithMarker = new mapboxgl.Marker()
@@ -23,11 +23,10 @@ var marker = new mapboxgl.Marker()
 //     .setLngLat([-96.8104, 32.7872])
 //     .addTo(map);
 //
-var lalibela = new mapboxgl.Popup({
-    className: 'lalibela-popup'
-})
-.setHTML("<p>Lalibela Ethiopian Restaurant</p>")
-.addTo(map);
+// var lalibela = new mapboxgl.Popup({
+//     className: 'lalibela-popup'
+// })
+// .addTo(map);
 
 // var smithPopup = new mapboxgl.Popup({
 //     className: 'smith-popup'
@@ -47,7 +46,7 @@ var lalibela = new mapboxgl.Popup({
 //     .setHTML("<p>Mark Cuban is my Step-Dad</p>")
 //     .addTo(map)
 //
-// marker.setPopup(lalibela);
+//marker.setPopup(lalibela);
 // smithMarker.setPopup(smithPopup);
 // searsMarker.setPopup(searsPopUp);
 // aacenterMarker.setPopup(dallasPopUp);
@@ -71,7 +70,7 @@ map.on('load', function () {
                     'properties': {
                         'description':
                             '<strong>Lalibela</strong><p><a href=https://www.yelp.com/biz/lalibela-ethiopian-restaurant-dallas target="_blank">Lalibela</a> one of the highest rated Ethiopian restaurants in Dallas. Try their Doro Wat on their home made Injeera bread.</p>',
-                        'icon': 'music'
+                        'icon': 'restaurant'
                     },
                     'geometry': {
                         'type': 'Point',
