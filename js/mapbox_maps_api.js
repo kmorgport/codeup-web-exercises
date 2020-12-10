@@ -47,7 +47,7 @@ var lalibela = new mapboxgl.Popup({
 //     .setHTML("<p>Mark Cuban is my Step-Dad</p>")
 //     .addTo(map)
 //
-marker.setPopup(lalibela);
+// marker.setPopup(lalibela);
 // smithMarker.setPopup(smithPopup);
 // searsMarker.setPopup(searsPopUp);
 // aacenterMarker.setPopup(dallasPopUp);
@@ -70,14 +70,50 @@ map.on('load', function () {
                     'type': 'Feature',
                     'properties': {
                         'description':
-                            '<strong>Truckeroo</strong><p><a href="http://www.truckeroodc.com/www/" target="_blank">Truckeroo</a> brings dozens of food trucks, live music, and games to half and M Street SE (across from Navy Yard Metro Station) today from 11:00 a.m. to 11:00 p.m.</p>',
+                            '<strong>Lalibela</strong><p><a href=https://www.yelp.com/biz/lalibela-ethiopian-restaurant-dallas target="_blank">Lalibela</a> one of the highest rated Ethiopian restaurants in Dallas. Try their Doro Wat on their home made Injeera bread.</p>',
                         'icon': 'music'
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [-77.007481, 38.876516]
+                        'coordinates': [-96.7436, 32.9095]
                     }
                 }
             ]
         }
-    });
+    })
+
+map.addLayer({
+    'id': 'places',
+    'type': 'symbol',
+    'source': 'places',
+    'layout': {
+        'icon-image': '{icon}-15',
+        'icon-allow-overlap': true
+    }
+});
+
+map.on('click', 'places', function (e) {
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.description;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+
+    new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(description)
+        .addTo(map);
+});
+
+map.on('mouseenter', 'places', function () {
+    map.getCanvas().style.cursor = 'pointer';
+});
+
+map.on('mouseleave', 'places', function () {
+    map.getCanvas().style.cursor = '';
+});
+});
