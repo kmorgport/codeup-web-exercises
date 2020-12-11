@@ -167,6 +167,7 @@ map.on('mouseleave', 'places', function () {
 //     document.getElementById('searchbtn').addEventListener('click',listener);
 //
 // }
+var popUp = new mapboxgl.Popup()
 const locsearch = document.getElementById("searchbtn");
 locsearch.addEventListener("click",e=>{
     var address = document.querySelector('input[type="text"]').value;
@@ -176,18 +177,16 @@ locsearch.addEventListener("click",e=>{
         map.setZoom(15);
         var marker = new mapboxgl.Marker()
         marker.setLngLat(result);
-        var popUp = new mapboxgl.Popup()
-            .setHTML(address)
-            .addTo(map)
+        popUp.setHTML(address).addTo(map)
         marker.setPopup(popUp)
     })
 
 })
-// var zoomSelect = document.getElementById("zoom-select")
-// zoomSelect.addEventListener("change", function(e){
-//     var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
-//     map.setZoom(parseInt(zoomValue));
-// })
+
+var resetSelect = document.getElementById("reset-button")
+resetSelect.addEventListener("click", e=>{
+    popUp.remove();
+})
 
 
 
