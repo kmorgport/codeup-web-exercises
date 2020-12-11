@@ -14,7 +14,7 @@ var map = new mapboxgl.Map({
 // var smithMarker = new mapboxgl.Marker()
 //     .setLngLat([-77.0259, 38.8920,])
 //     .addTo(map);
-//
+
 // var searsMarker = new mapboxgl.Marker()
 //     .setLngLat([-87.6354,41.8789])
 //     .addTo(map);
@@ -58,6 +58,11 @@ var map = new mapboxgl.Map({
 //     marker.setLngLat(result)
 //     marker.setPopup(dallasPopUp)
 // })
+var zoomSelect = document.getElementById("zoom-select")
+zoomSelect.addEventListener("change", function(e){
+    var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
+    map.setZoom(parseInt(zoomValue));
+})
 
 map.on('load', function () {
     map.addSource('places', {
@@ -114,7 +119,8 @@ map.addLayer({
         'icon-allow-overlap': true
     }
 });
-
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
 map.on('click', 'places', function (e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
     var description = e.features[0].properties.description;
@@ -131,12 +137,65 @@ map.on('click', 'places', function (e) {
         .setHTML(description)
         .addTo(map);
 });
-
+// Change the cursor to a pointer when the mouse is over the places layer.
 map.on('mouseenter', 'places', function () {
     map.getCanvas().style.cursor = 'pointer';
 });
-
+// Change it back to a pointer when it leaves.
 map.on('mouseleave', 'places', function () {
     map.getCanvas().style.cursor = '';
 });
 });
+// const addForm = document.getElementById('search')
+// var listener = function(e){
+//     e.preventDefault();
+//     const address = addForm.querySelector('input[type="text"]').value;
+//     geocode(address, mapBoxToken).then((result)=>{
+//         console.log(result);
+//         map.jumpTo({center: result});
+//         map.setZoom(15);
+//         var marker = new mapboxgl.Marker()
+//         marker.setLngLat(result);
+//         var popUp = new mapboxgl.Popup({
+//             className: 'smith-popup'
+//         })
+//             .setHTML(address)
+//             .addTo(map)
+//
+//         marker.setPopup(popUp)
+//     })
+//     document.getElementById('searchbtn').addEventListener('click',listener);
+//
+// }
+const locsearch = document.getElementById("searchbtn");
+locsearch.addEventListener("click",e=>{
+    var address = document.querySelector('input[type="text"]').value;
+    geocode(address, mapBoxToken).then(result =>{
+        console.log(result);
+        map.jumpTo({center: result});
+        map.setZoom(15);
+        var marker = new mapboxgl.Marker()
+        marker.setLngLat(result);
+        var popUp = new mapboxgl.Popup()
+            .setHTML(address)
+            .addTo(map)
+        marker.setPopup(popUp)
+    })
+
+})
+// var zoomSelect = document.getElementById("zoom-select")
+// zoomSelect.addEventListener("change", function(e){
+//     var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
+//     map.setZoom(parseInt(zoomValue));
+// })
+
+
+
+// geocode("1717 Annex St, Dallas, TX 75204", mapBoxToken).then(function(result){
+//     console.log(result);
+//     map.jumpTo({center: result}); //map.setCenter to coord
+//     map.setZoom(15)
+
+//     marker.setLngLat(result)
+//     marker.setPopup(dallasPopUp)
+// })
