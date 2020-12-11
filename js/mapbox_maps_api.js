@@ -69,12 +69,36 @@ map.on('load', function () {
                     'type': 'Feature',
                     'properties': {
                         'description':
-                            '<strong>Lalibela</strong><p><a href=https://www.yelp.com/biz/lalibela-ethiopian-restaurant-dallas target="_blank">Lalibela</a> one of the highest rated Ethiopian restaurants in Dallas. Try their Doro Wat on their home made Injeera bread.</p>',
+                            '<strong>Lalibela</strong><p><a href="https://www.yelp.com/biz/lalibela-ethiopian-restaurant-dallas" target="_blank">Lalibela</a> one of the highest rated Ethiopian restaurants in Dallas. Try their Doro Wat on their home made Injeera bread.</p>',
                         'icon': 'restaurant'
                     },
                     'geometry': {
                         'type': 'Point',
                         'coordinates': [-96.7436, 32.9095]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'description':
+                            '<strong>H Mart Cafeteria</strong><p><a href="https://www.hmart.com" target="_blank">H-Mart</a> Korean Grocer with a cafeteria inside that offers a wide selection of different food options. Try their kimchi-jjigae, their jjampong, or just go for a kimbap.</p>',
+                        'icon': 'restaurant'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-96.6968, 33.0393]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'description':
+                            '<strong>Mattito\'s</strong><p><a href="https://mattitos.com/locations/dallas-forest-lane/" target="_blank">Mattito\'s</a> Located on Cedar Springs and Oak Lawn, offers classic tex-mex. Enjoy a margarita on their pateo.</p>',
+                        'icon': 'restaurant'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-96.8080, 32.8159]
                     }
                 }
             ]
