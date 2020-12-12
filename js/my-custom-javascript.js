@@ -1,9 +1,17 @@
  "use strict"
-// $(document).ready(function(){
-//     alert('The DOM has finished loading!');
-// })
-// var cont = $('#ruby').html();
-// alert(cont);
-// $('.codeup').css('border','1px solid red');
+$('#diamond').click(function(){
+    $(this).css('background-color','red');
+});
 
-$('li').css('font-size','20px')
+$('p').dblclick(function(){
+    $(this).css('font-size', '18px');
+});
+
+$('li').hover(
+    function(){
+        $(this).css('color','red')
+    },
+    function(){
+        $(this).css('color','black')
+    }
+)
