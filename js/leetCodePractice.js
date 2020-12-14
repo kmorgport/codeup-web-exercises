@@ -50,25 +50,102 @@ function hasAllowed(allowed, words){
     //the same elements as allowSet
     //cycles back to filter where only the true returns of the .every are filtered back into the array
     //.length gives you count
-    const count = words.filter(w=>w.split('').every(l=>allowSet.has(l)));
+    const count = words.filter(w=>w.split('').every(l=>allowSet.has(l))).length;
     console.log(count)
 }
-
 hasAllowed('ab',["ad","bd","aaab","baa","badab"]);
 
-function goalParser(str){
-    var goalarr = [];
-    for(let i=0; i<str.length;i++){
-        if(str[i]=='G'){
-            goalarr.push(str[i])
-        }else if(str[i]=='(' &&str[i+1]==')'){
-            goalarr.push('o')
-        }else if(str[i]=='a'){
-            goalarr.push('al')
-        }
+// function goalParser(str){
+//     var goalarr = [];
+//     for(let i=0; i<str.length;i++){
+//         if(str[i]=='G'){
+//             goalarr.push(str[i])
+//         }else if(str[i]=='(' &&str[i+1]==')'){
+//             goalarr.push('o')
+//         }else if(str[i]=='a'){
+//             goalarr.push('al')
+//         }
+//     }
+//         console.log(goalarr.join(''))
+// }
+//
+// goalParser("(al)G(al)()()G")
+// goalParser("G()()()()(al)")
+
+// function flatten(arr){
+//     console.log(arr.flat())
+// }
+// flatten([[1, 2], [3, 4], [5, 6]])
+
+const books = [
+    {
+        "title": "Genetic Algorithms and Machine Learning for Programmers",
+        "price": 36.99,
+        "author": "Frances Buontempo"
+    },
+    {
+        "title": "The Visual Display of Quantitative Information",
+        "price": 38.00,
+        "author": "Edward Tufte"
+    },
+    {
+        "title": "Practical Object-Oriented Design",
+        "author": "Sandi Metz",
+        "price": 30.47
+    },
+    {
+        "title": "Weapons of Math Destruction",
+        "author": "Cathy O'Neil",
+        "price": 17.44
     }
-        console.log(goalarr.join(''))
+]
+function bookslength(obj){
+    console.log(obj.length)
+}
+bookslength(books)
+
+function sumtot(obj){
+    const sum = obj.reduce((total, book)=>{
+        return total + book.price;
+    },0)
+    console.log(sum/books.length)
 }
 
-goalParser("(al)G(al)()()G")
-goalParser("G()()()()(al)")
+sumtot(books)
+
+function highestPrice(obj){
+    let maxPrice = obj.reduce((max, book)=> max.price > book.price ? max : book);
+    console.log(maxPrice)
+}
+highestPrice(books)
+
+const shoppingCart = {
+    "tax": .08,
+    "items": [
+        {
+            "title": "orange juice",
+            "price": 3.99,
+            "quantity": 1
+        },
+        {
+            "title": "rice",
+            "price": 1.99,
+            "quantity": 3
+        },
+        {
+            "title": "beans",
+            "price": 0.99,
+            "quantity": 3
+        },
+        {
+            "title": "chili sauce",
+            "price": 2.99,
+            "quantity": 1
+        },
+        {
+            "title": "chocolate",
+            "price": 0.75,
+            "quantity": 9
+        }
+    ]
+}
