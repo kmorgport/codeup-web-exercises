@@ -54,4 +54,21 @@ function hasAllowed(allowed, words){
     console.log(count)
 }
 
-hasAllowed('ab',["ad","bd","aaab","baa","badab"])
+hasAllowed('ab',["ad","bd","aaab","baa","badab"]);
+
+function goalParser(str){
+    var goalarr = [];
+    for(let i=0; i<str.length;i++){
+        if(str[i]=='G'){
+            goalarr.push(str[i])
+        }else if(str[i]=='(' &&str[i+1]==')'){
+            goalarr.push('o')
+        }else if(str[i]=='a'){
+            goalarr.push('al')
+        }
+    }
+        console.log(goalarr.join(''))
+}
+
+goalParser("(al)G(al)()()G")
+goalParser("G()()()()(al)")
