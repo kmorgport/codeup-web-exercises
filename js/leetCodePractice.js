@@ -27,16 +27,31 @@
 // defangIP("255.100.50.0")
 // defangIP('1.1.1.1')
 
-function goodpair(arr){
-    let count = 0
-    for(let i=0; i<arr.length;i++){
-        for(let j=i+1; j<arr.length; j++){
-            if(arr[i]==arr[j]){
-                count+=1
-            }
-        }
-    }
-    console.log(count)
+// function goodpair(arr){
+//     let count = 0
+//     for(let i=0; i<arr.length;i++){
+//         for(let j=i+1; j<arr.length; j++){
+//             if(arr[i]==arr[j]){
+//                 count+=1
+//             }
+//         }
+//     }
+//     console.log(count)
+//
+// }
+// goodpair([1,1,1,1])
 
+function hasAllowed(allowed, words){
+    //creates a new Set from allowed string
+    const allowSet = new Set(allowed.split(''));
+    //first filters words array
+    //each element is split into temporary subarray
+    //subarray is run with .every to determine if subelements of array (l) '.has'
+    //the same elements as allowSet
+    //cycles back to filter where only the true returns of the .every are filtered back into the array
+    //.length gives you count
+    const count = words.filter(w=>w.split('').every(l=>allowSet.has(l)));
+    console.log(count)
 }
-goodpair([1,1,1,1])
+
+hasAllowed('ab',["ad","bd","aaab","baa","badab"])
