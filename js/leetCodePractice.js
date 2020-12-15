@@ -149,3 +149,17 @@ const shoppingCart = {
         }
     ]
 }
+function totalItems(obj){
+    var newArray = obj.items
+    const totalArray = newArray.map((item)=>{
+        return item.price* item.quantity
+    })
+    const total = totalArray.reduce((a,b)=>{
+        return a+b;
+    },0)
+    const quantity = newArray.reduce((max, item)=>{
+        return max + item.quantity
+    },0)
+    console.log(total/quantity)
+}
+totalItems(shoppingCart)
