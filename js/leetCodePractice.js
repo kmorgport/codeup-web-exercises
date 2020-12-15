@@ -159,4 +159,10 @@ function totalItems(obj){
     },0)
     console.log(total/quantity)
 }
-totalItems(shoppingCart)
+
+function highestPriceQuantity(obj){
+    var newArray = obj.items;
+    const highest = newArray.reduce((max, item)=> (max.price*max.quantity) > (item.price*item.quantity) ? max : item)
+    console.log(highest)
+}
+highestPriceQuantity(shoppingCart)
