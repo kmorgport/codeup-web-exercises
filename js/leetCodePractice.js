@@ -113,11 +113,11 @@ function sumtot(obj){
 
 sumtot(books)
 
-function highestPrice(obj){
-    let maxPrice = obj.reduce((max, book)=> max.price > book.price ? max : book);
-    console.log(maxPrice)
-}
-highestPrice(books)
+// function highestPrice(obj){
+//     let maxPrice = obj.reduce((max, book)=> max.price > book.price ? max : book);
+//     console.log(maxPrice)
+// }
+// highestPrice(books)
 
 const shoppingCart = {
     "tax": .08,
@@ -149,20 +149,112 @@ const shoppingCart = {
         }
     ]
 }
-function totalItems(obj){
-    var newArray = obj.items
-    const total = newArray.map(item=>item.price*item.quantity).reduce((a,b)=>{
-        return a+b;
-    },0)
-    const quantity = newArray.reduce((max, item)=>{
-        return max + item.quantity
-    },0)
-    console.log(total/quantity)
+// function totalItems(obj){
+//     var newArray = obj.items
+//     const total = newArray.map(item=>item.price*item.quantity).reduce((a,b)=>{
+//         return a+b;
+//     },0)
+//     const quantity = newArray.reduce((max, item)=>{
+//         return max + item.quantity
+//     },0)
+//     console.log(total/quantity)
+// }
+//
+// function highestPriceQuantity(obj){
+//     const newArray = obj.items;
+//     const highest = newArray.reduce((max, item)=> (max.price*max.quantity) > (item.price*item.quantity) ? max : item)
+//     console.log(highest)
+// }
+// highestPriceQuantity(shoppingCart)
+//
+//
+//
+// function totalItems(obj){
+//     var newArray = obj.items
+//     const total = newArray.map(item=>item.price*item.quantity).reduce((a,b)=>{
+//         return a+b;
+//     },0)
+//     const quantity = newArray.reduce((max, item)=>{
+//         return max + item.quantity
+//     },0)
+//     console.log(total/quantity)
+// }
+//
+// function elementsTimesTwo(arr){
+//     const timesTwo = arr.map(e=>e*2)
+//     console.log(timesTwo)
+// }
+//
+// function elementsTimesTwo(arr){
+//     const timesTwo = arr.map(function(e){
+//         return e*2
+//     })
+//     console.log(timesTwo)
+// }
+//
+// elementsTimesTwo([1, 2, 3])
+//
+// function isOdd(arr){
+//     const odd = arr.has(e=>e%2)
+//     console.log(odd)
+// }
+
+
+// const books = [
+//     {
+//         title: "Genetic Algorithms and Machine Learning for Programmers",
+//         price: 36.99,
+//         author: "Frances Buontempo"
+//     },
+//     {
+//         title: "The Visual Display of Quantitative Information",
+//         price: 38.0,
+//         author: "Edward Tufte"
+//     },
+//     {
+//         title: "Practical Object-Oriented Design",
+//         author: "Sandi Metz",
+//         price: 30.47
+//     },
+//     {
+//         title: "Weapons of Math Destruction",
+//         author: "Cathy O'Neil",
+//         price: 17.44
+//     }
+// ];
+
+
+
+function highestPriceBook(books){
+    books.sort((a,b)=>(a.price > b.price)? 1 : -1);
+    console.log(books[books.length - 1]);
 }
 
-function highestPriceQuantity(obj){
-    var newArray = obj.items;
-    const highest = newArray.reduce((max, item)=> (max.price*max.quantity) > (item.price*item.quantity) ? max : item)
-    console.log(highest)
+function high(arr){
+    arr.sort(function(a,b){
+        return a.price-b.price
+    });
+    console.log(arr[arr.length-1])
 }
-highestPriceQuantity(shoppingCart)
+
+high(books)
+
+function highest(books){
+    const high = books.reduce((max, book)=>(max.price)>(book.price)? max:book)
+    console.log(high)
+}
+highest(books)
+
+function wordyhigh(arr){
+    const high = arr.reduce(function(max,book){
+        if(max.price>book.price){
+            return max
+        }else{
+            return book
+        }
+    })
+    console.log(high)
+    console.log(arr)
+}
+wordyhigh(books)
+
