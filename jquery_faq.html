@@ -7,40 +7,71 @@
         .invisible{
             visibility: hidden;
         }
+
+        .grass{
+            background-color: green;
+        }
+        .fire{
+            background-color: red;
+        }
+        .water{
+            background-color: dodgerblue;
+        }
+        .flying{
+            background-color: saddlebrown;
+        }
+        .bug{
+            background-color: #b4d455;
+        }
+        .electric{
+            background-color: yellow;
+        }
+        .fairy{
+            background-color: pink;
+        }
+        .poison{
+            background-color: mediumpurple;
+        }
+        .psychic{
+            background-color: deeppink;
+        }
+        .fighting{
+            background-color: brown;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/konami.js"></script>
 </head>
 <body>
 <dl>
-    <dt>Bulbasaur</dt>
+    <dt class="grass">Bulbasaur</dt>
     <dd>Grass Type Synapsid</dd>
 
-    <dt>Charmander</dt>
+    <dt class="fire">Charmander</dt>
     <dd>Fire Type Theropod</dd>
 
-    <dt>Squirtle</dt>
+    <dt class="water">Squirtle</dt>
     <dd>Water Type Turtle</dd>
 
-    <dt>Pidgey</dt>
+    <dt class="flying">Pidgey</dt>
     <dd>Flying Type Passarine</dd>
 
-    <dt>Caterpie</dt>
+    <dt class="bug">Caterpie</dt>
     <dd>Bug Type Arthropod</dd>
 
-    <dt>Pikachu</dt>
+    <dt class="electric">Pikachu</dt>
     <dd>Electric Type Rodent</dd>
 
-    <dt>Clefairy</dt>
+    <dt class="fairy">Clefairy</dt>
     <dd>Fairy Type Marsupial</dd>
 
-    <dt>Nidoran</dt>
+    <dt class="poison">Nidoran</dt>
     <dd>Poison Type Lagomorph</dd>
 
-    <dt>Abra</dt>
+    <dt class="psychic">Abra</dt>
     <dd>Psychic Type Simiaform</dd>
 
-    <dt>Machop</dt>
+    <dt class="fighting">Machop</dt>
     <dd>Fighting Type Hominim</dd>
 
 </dl>
@@ -53,6 +84,13 @@
             e.preventDefault();
             $('dt').toggleClass('invisible');
         });
+    })
+
+    $(document).ready(function(){
+        $('dt').click(e=>{
+            e.preventDefault();
+            $('dt').toggleClass()
+        })
     })
 </script>
 </body>
