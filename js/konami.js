@@ -39,7 +39,7 @@ var global = {
                 }
                 if (count == 11){
                     // Success!
-                    alert('Konami code entered! Do something cool here.');
+                    alert('You have added 30 lives!');
                     reset();
                 }
             } else {

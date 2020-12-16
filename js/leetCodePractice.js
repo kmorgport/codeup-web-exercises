@@ -257,4 +257,3 @@ function wordyhigh(arr){
     console.log(arr)
 }
 wordyhigh(books)
-

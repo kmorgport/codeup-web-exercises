@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/konami.js"></script>
+</head>
+<body>
+<dl>
+    <dt>Bulbasaur</dt>
+    <dd>Grass Type Synapsid</dd>
+
+    <dt>Charmander</dt>
+    <dd>Fire Type Theropod</dd>
+
+    <dt>Squirtle</dt>
+    <dd>Water Type Turtle</dd>
+
+    <dt>Pidgey</dt>
+    <dd>Flying Type Passarine</dd>
+
+    <dt>Caterpie</dt>
+    <dd>Bug Type Arthropod</dd>
+
+    <dt>Pikachu</dt>
+    <dd>Electric Type Rodent</dd>
+
+    <dt>Clefairy</dt>
+    <dd>Fairy Type Marsupial</dd>
+
+    <dt>Nidoran</dt>
+    <dd>Poison Type Lagomorph</dd>
+
+    <dt>Abra</dt>
+    <dd>Psychic Type Simiaform</dd>
+
+    <dt>Machop</dt>
+    <dd>Fighting Type Hominim</dd>
+
+</dl>
+<button type="button" id="visbut">Click</button>
+<script>
+    "use strict"
+
+    $(document).ready(function(){
+        $('#visbut').click(e=>{
+            e.preventDefault();
+            $('dt').toggleClass('invisible');
+        });
+    })
+</script>
+</body>
+</html>
