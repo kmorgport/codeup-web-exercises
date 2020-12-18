@@ -261,13 +261,34 @@ console.log(shoppingCart.items.length)
 // }
 // wordyhigh(books)
 
-function pyramid(n){
-    for(let i =1; i<=n; i++){
-        var s ="";
-        for(var j = 1; j<=(2*n-1);j++){
-            (j>=n+1-i && j<=n-1+i)? s+=("*"):s+=" ";
-        }
-        console.log(s);
-    }
+// function pyramid(n){
+//     for(let i =1; i<=n; i++){
+//         document.write('')
+//         for(var j = 1; j<=(2*n-1);j++){
+//             document.write('');
+//             (j>=n+1-i && j<=n-1+i)? document.write('*'):document.write(' ');
+//         }
+//         document.write('<br/>');
+//     }
+// }
+// function jspyramid(n) {
+//     for (let i = 1; i <= n; i++) {
+//         console.log("#".repeat(i).padStart(n));
+//     }
+// }
+// pyramid(5)
+// jspyramid(5)
+
+
+function smallerNumbersThanCurrent(arr){
+    //sort changes og array, use spread to leave arr untouched, sort by smallest to largest
+    const sorted = [...arr].sort((a,b)=>a-b);
+    console.log(sorted)
+    //map to apply sorted.indexOf on each element
+    //sorted.indexOf(num) shows what element num is inside sorted array
+    //since num is sorted in increased value, indexOf will show what that index is of each number, hence how many numbers it is larger than
+    //for duplicates, it will only read the first instance of index
+    return arr.map(num=>sorted.indexOf(num))
+
 }
-pyramid(5)
+smallerNumbersThanCurrent([8,1,2,2,3])
