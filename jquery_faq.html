@@ -101,6 +101,7 @@
     <li>Petalburg</li>
     <li>Rustboro</li>
 </ul>
+<button type="button" id="btn2">Click</button>
 <script>
     "use strict"
 
@@ -124,6 +125,17 @@
             $('ul').children().css('font-weight','bold')
         })
     })
+
+    $(document).ready(function(){
+        $('#btn2').click(function(){
+            $('li').each(function() {
+                $('ul li:last-child').css('background-color', 'yellow')
+            })
+            }
+
+
+        )})
+    changes
 </script>
 </body>
 </html>
