@@ -76,6 +76,31 @@
 
 </dl>
 <button type="button" id="visbut">Click</button>
+
+<h3 id="kanto-heading">Kanto</h3>
+<ul id="kanto-cities">
+    <li>Viridian</li>
+    <li>Pewter</li>
+    <li>Cerulean</li>
+    <li>Vermillion</li>
+    <li>Celadon</li>
+</ul>
+<h3 id="johto-heading">Johto</h3>
+<ul id="johto-cities">
+    <li>Ecruteak</li>
+    <li>Cherrygrove</li>
+    <li>Violet</li>
+    <li>Azalea</li>
+    <li>Goldenrod</li>
+</ul>
+<h3 id="hoenn-heading">Hoenn</h3>
+<ul id="hoenn-cities">
+    <li>Verdanturf</li>
+    <li>Littleroot</li>
+    <li>Oldale</li>
+    <li>Petalburg</li>
+    <li>Rustboro</li>
+</ul>
 <script>
     "use strict"
 
@@ -90,6 +115,13 @@
         $('dt').click(e=>{
             e.preventDefault();
             $('dt').toggleClass()
+        })
+    })
+
+    $(document).ready(function(){
+        $('h3').click(e=>{
+            e.preventDefault();
+            $('ul').children().css('font-weight','bold')
         })
     })
 </script>

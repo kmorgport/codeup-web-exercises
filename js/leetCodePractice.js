@@ -149,6 +149,8 @@ const shoppingCart = {
         }
     ]
 }
+
+console.log(shoppingCart.items.length)
 // function totalItems(obj){
 //     var newArray = obj.items
 //     const total = newArray.map(item=>item.price*item.quantity).reduce((a,b)=>{
@@ -225,35 +227,37 @@ const shoppingCart = {
 
 
 
-function highestPriceBook(books){
-    books.sort((a,b)=>(a.price > b.price)? 1 : -1);
-    console.log(books[books.length - 1]);
-}
+// function highestPriceBook(books){
+//     books.sort((a,b)=>(a.price > b.price)? 1 : -1);
+//     console.log(books[books.length - 1]);
+// }
+//
+// function high(arr){
+//     arr.sort(function(a,b){
+//         return a.price-b.price
+//     });
+//     console.log(arr[arr.length-1])
+// }
+//
+// high(books)
+//
+// function highest(books){
+//     const high = books.reduce((max, book)=>(max.price)>(book.price)? max:book)
+//     console.log(high)
+// }
+// highest(books)
+//
+//
+// function wordyhigh(arr){
+//     const high = arr.reduce(function(max,book){
+//         if(max.price>book.price){
+//             return max
+//         }else{
+//             return book
+//         }
+//     })
+//     console.log(high)
+//     console.log(arr)
+// }
+// wordyhigh(books)
 
-function high(arr){
-    arr.sort(function(a,b){
-        return a.price-b.price
-    });
-    console.log(arr[arr.length-1])
-}
-
-high(books)
-
-function highest(books){
-    const high = books.reduce((max, book)=>(max.price)>(book.price)? max:book)
-    console.log(high)
-}
-highest(books)
-
-function wordyhigh(arr){
-    const high = arr.reduce(function(max,book){
-        if(max.price>book.price){
-            return max
-        }else{
-            return book
-        }
-    })
-    console.log(high)
-    console.log(arr)
-}
-wordyhigh(books)
