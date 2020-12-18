@@ -293,3 +293,24 @@ function smallerNumbersThanCurrent(arr){
 
 }
 smallerNumbersThanCurrent([8,1,2,2,3])
+
+function getUniqueValues(x){
+    var unique = x.filter((v,i,a)=> a.indexOf(v)===i);
+    return unique;
+}
+
+function howManyMatches(n) {
+    var teams = n;
+    var matchCount = 0;
+    while(teams !==1){
+        if(teams%2===0){
+            matchCount += teams/2
+            teams = teams/2
+        }else if(teams%2===1) {
+            matchCount += (teams - 1) / 2
+            teams = ((teams - 1) / 2) + 1;
+        }
+    }
+    console.log(matchCount)
+}
+howManyMatches(16)
