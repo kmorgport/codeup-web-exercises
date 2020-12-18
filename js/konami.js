@@ -40,6 +40,7 @@ var global = {
                 if (count == 11){
                     // Success!
                     alert('You have added 30 lives!');
+                    $('body').css('background-color','blue')
                     reset();
                 }
             } else {

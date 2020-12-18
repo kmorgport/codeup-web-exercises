@@ -288,7 +288,8 @@ function smallerNumbersThanCurrent(arr){
     //sorted.indexOf(num) shows what element num is inside sorted array
     //since num is sorted in increased value, indexOf will show what that index is of each number, hence how many numbers it is larger than
     //for duplicates, it will only read the first instance of index
-    return arr.map(num=>sorted.indexOf(num))
+    const quant = arr.map(num=>sorted.indexOf(num));
+    console.log(quant)
 
 }
 smallerNumbersThanCurrent([8,1,2,2,3])
