@@ -132,10 +132,12 @@
                 $('ul li:last-child').css('background-color', 'yellow')
             })
             }
-
-
         )})
-    changes
+    $(document).ready(function(){
+        $('*').click(function(){
+            $('ul li:first-child').css('color','blue')
+        })
+    })
 </script>
 </body>
 </html>
