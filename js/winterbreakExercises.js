@@ -73,3 +73,19 @@ function findWeapon(obj){
 }
 
 findWeapon(players)
+
+var rectanglesOne = [
+    {height: 3, width: 7, color: "blue"},
+    {height: 13, width: 4, color: "pink"},
+    {height: 40, width: 18, color: "purple"}
+]
+var rectanglesTwo = [
+    {height: 10, width: 10, color: "yellow"},
+    {height: 88, width: 7, color: "red"},
+    {height: 5, width: 6, color: "green"}
+]
+
+function findLargest(arr){
+    return arr.reduce((max,shape)=>(max.width*max.height)>(shape.width*shape.height)?max:shape);
+}
+console.log(findLargest(rectanglesOne))
