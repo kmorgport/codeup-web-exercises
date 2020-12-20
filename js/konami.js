@@ -41,6 +41,7 @@ var global = {
                     // Success!
                     alert('You have added 30 lives!');
                     $('body').addClass('bg1')
+                    $()
                     reset();
                 }
             } else {
