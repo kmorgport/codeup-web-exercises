@@ -152,3 +152,13 @@ function accretion(arr){
 
 console.log(accretion([1, 1, 1]))
 console.log(accretion([4, 2, 1, 3, 5]))
+
+function isogram(str){
+    return str.split('').filter((v,i,ar)=>ar.indexOf(v)===i).length === str.split('').length
+
+}
+
+console.log(isogram('fish'))
+console.log(isogram('food'))
+console.log(isogram('color'))
+console.log(isogram('codeup'))
