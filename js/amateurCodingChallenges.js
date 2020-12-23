@@ -67,22 +67,22 @@
 // }
 // phoneBookSorter("Travis:Meyer;Gene:Carangal;Tom:Young;Jeff:Meyer")
 
-// function birthdate(dob){
-//     //turn string into array
-//     var yourdate = dob.split('/').reverse();
-//     //convert array object into a Date object(takes year, day, month
-//     var birthday = new Date(yourdate[0],yourdate[1],yourdate[2]);
-//     /*subtracts the difference between the current day(represented in seconds
-//     from standard time and the birthdate relevant to the .getTime method
-//      */
-//     var diff_ms = Date.now() - birthday.getTime();
-//     //creates new date object derived from transferring those seconds back into a date
-//     var age_dt = new Date(diff_ms);
-//     //returns the full seconds but subtracts 1970 to derive year, rounds up
-//     console.log(Math.abs(age_dt.getUTCFullYear() - 1970));
-//
-// }
-// birthdate('11/03/1981')
+function birthdate(dob){
+    //turn string into array
+    var yourdate = dob.split('/').reverse();
+    //convert array object into a Date object(takes year, day, month
+    var birthday = new Date(yourdate[0],yourdate[1],yourdate[2]);
+    /*subtracts the difference between the current day(represented in seconds
+    from standard time and the birthdate relevant to the .getTime method
+     */
+    var diff_ms = Date.now() - birthday.getTime();
+    //creates new date object derived from transferring those seconds back into a date
+    var age_dt = new Date(diff_ms);
+    //returns the full seconds but subtracts 1970 to derive year, rounds up
+    console.log(Math.abs(age_dt.getUTCFullYear() - 1970));
+
+}
+birthdate('11/03/1981')
 
 // function strToArr(str){
 //     var newarr = str.split(' ');
@@ -139,3 +139,16 @@ function compareTriplets(a,b){
     var bCount = 0;
 
 }
+
+function accretion(arr){
+    //maps over array
+    //e (each element)
+    //a (for accretion)
+    //the element plus the accretion
+    //0 stands for what a-accretion starts at (for the first element)
+    //this algorithm is similar in some ways to the .reduce, however it maps over each element instead of just 'returning' the final fully accreted element
+    return arr.map((e=> a => e+=a)(0))
+}
+
+console.log(accretion([1, 1, 1]))
+console.log(accretion([4, 2, 1, 3, 5]))
