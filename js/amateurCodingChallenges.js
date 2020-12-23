@@ -162,3 +162,33 @@ console.log(isogram('fish'))
 console.log(isogram('food'))
 console.log(isogram('color'))
 console.log(isogram('codeup'))
+
+function phonepad(str){
+    function keys(e){
+        if(typeof(e)==='number')return
+        if(e==='-'){
+            e='-'
+        }else if(e==='A'||e==='B'||e==='C'){
+            e=2
+        }else if(e==='D'||e==='E'||e==='F'){
+            e=3
+        }else if(e==='G'||e==='H'||e==='I'){
+            e=4
+        } else if(e==='J'||e==='K'||e==='L') {
+            e = 5
+        }else if(e==='M'||e==='N'||e==='O'){
+            e=6
+        }else if(e==='P'||e==='Q'||e==='R'||e==='S'){
+            e=7
+        } else if(e==='T'||e==='U'||e==='V'){
+            e=8
+        }else if(e==='W'||e==='X'||e==='Y'||e==='Z'){
+            e=9
+        }
+        return e
+    }
+    return str.split('').map(e=>keys(e)).join('')
+}
+
+console.log(phonepad('210-367-CODE'))
+console.log(phonepad('TRY-THE-FOOD'))
