@@ -20,3 +20,22 @@ function targetElements(arr,n){
 }
 
 console.log(targetElements([ 1, 4, 8, 12 ],20))
+
+
+function sortString(str){
+    const freq = {};
+    for (let i in str){
+        freq[str.charAt(i)]?freq[str.charAt(i)]++:freq[str.charAt(i)]=1;
+    }
+    console.log(freq)
+    let entries = Object.entries(freq);
+    let sorted = entries.sort((a,b)=>b[1]-a[1]);
+    let result = "";
+    for(let i in sorted){
+        result += sorted[i][0].repeat(sorted[i][1])
+    }
+    return result
+}
+
+console.log(sortString('bee'))
+console.log(sortString('Abaaacdb'))
