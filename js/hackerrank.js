@@ -14,22 +14,40 @@ bignumSum([1000000001,1000000002,1000000003,1000000004,1000000005,])
 // }
 // diagDiff([[11,2,4],[4,5,6],[10,8,-12]])
 
-function ratios(arr){
-    let poz = 0;
-    let neg = 0;
-    let zero = 0;
-    for(let i=0; i<arr.length; i++){
-        if(arr[i]>0){
-            poz+=1
-        }else if(arr[i]<0){
-            neg+=1;
-        }else if(arr[i]===0){
-            zero+=1
-        }
+// function ratios(arr){
+//     let poz = 0;
+//     let neg = 0;
+//     let zero = 0;
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i]>0){
+//             poz+=1
+//         }else if(arr[i]<0){
+//             neg+=1;
+//         }else if(arr[i]===0){
+//             zero+=1
+//         }
+//     }
+//     console.log((poz/arr.length).toFixed(6))
+//     console.log((neg/arr.length).toFixed(6))
+//     console.log((zero/arr.length).toFixed(6))
+// }
+//
+// ratios([-4,3,-9,0,4,1])
+
+function partyList(str){
+    let list = str.toUpperCase().split(';')
+    let fix = list.map(e=>e.replace(':',', '))
+    let namearray = [];
+    for(let i=0; i<fix.length;i++){
+        let firstloc = fix[i].indexOf(',')
+        let lastloc = fix[i].indexOf(' ')
+        let firstslice = fix[i].slice(0,firstloc)
+        let lastslice = fix[i].slice(lastloc+1)
+        let name = lastslice+', '+firstslice;
+        namearray.push(name)
     }
-    console.log((poz/arr.length).toFixed(6))
-    console.log((neg/arr.length).toFixed(6))
-    console.log((zero/arr.length).toFixed(6))
+    let namestr = namearray.sort().join(')(')
+    console.log('('+namestr+')')
 }
 
-ratios([-4,3,-9,0,4,1])
+partyList("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill")
