@@ -44,34 +44,34 @@
 </head>
 <body>
 <dl>
-    <dt class="grass">Bulbasaur</dt>
+    <dt class="grass" data-dt>Bulbasaur</dt>
     <dd>Grass Type Synapsid</dd>
 
-    <dt class="fire">Charmander</dt>
+    <dt class="fire" data-dt>Charmander</dt>
     <dd>Fire Type Theropod</dd>
 
-    <dt class="water">Squirtle</dt>
+    <dt class="water" data-dt>Squirtle</dt>
     <dd>Water Type Turtle</dd>
 
-    <dt class="flying">Pidgey</dt>
+    <dt class="flying" data-dt>Pidgey</dt>
     <dd>Flying Type Passarine</dd>
 
-    <dt class="bug">Caterpie</dt>
+    <dt class="bug" data-dt>Caterpie</dt>
     <dd>Bug Type Arthropod</dd>
 
-    <dt class="electric">Pikachu</dt>
+    <dt class="electric" data-dt>Pikachu</dt>
     <dd>Electric Type Rodent</dd>
 
-    <dt class="fairy">Clefairy</dt>
+    <dt class="fairy" data-dt>Clefairy</dt>
     <dd>Fairy Type Marsupial</dd>
 
-    <dt class="poison">Nidoran</dt>
+    <dt class="poison" data-dt>Nidoran</dt>
     <dd>Poison Type Lagomorph</dd>
 
-    <dt class="psychic">Abra</dt>
+    <dt class="psychic" data-dt>Abra</dt>
     <dd>Psychic Type Simiaform</dd>
 
-    <dt class="fighting">Machop</dt>
+    <dt class="fighting" data-dt>Machop</dt>
     <dd>Fighting Type Hominim</dd>
 
 </dl>
@@ -104,6 +104,7 @@
 <button type="button" id="btn2">Click</button>
 <script>
     "use strict"
+const poke = document.querySelectorAll('[data-dt]')
 
     $(document).ready(function(){
         $('#visbut').click(e=>{
@@ -112,12 +113,24 @@
         });
     })
 
+
     $(document).ready(function(){
-        $('dt').click(e=>{
-            e.preventDefault();
-            $('dt').toggleClass()
+        $('dt').each(function(){
+            $(this).click(e=>{
+                e.preventDefault()
+                $(this).toggleClass()
+            })
         })
     })
+
+
+
+    // $(document).ready(function(){
+    //     $('dt').click(e=>{
+    //         e.preventDefault();
+    //         $('dt').toggleClass()
+    //     })
+    // })
 
     $(document).ready(function(){
         $('h3').click(e=>{
