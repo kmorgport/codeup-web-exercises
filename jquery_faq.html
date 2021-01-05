@@ -38,11 +38,22 @@
         .fighting{
             background-color: brown;
         }
+        .parklist{
+            display: none;
+        }
+        .learn{
+            display: none;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/konami.js"></script>
 </head>
 <body>
+<div class="signup">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
+<h2 class="learn">Would you like to learn more?</h2>
 <dl>
     <dt class="grass" data-dt>Bulbasaur</dt>
     <dd>Grass Type Synapsid</dd>
@@ -77,24 +88,24 @@
 </dl>
 <button type="button" id="visbut">Click</button>
 
-<h3 id="kanto-heading">Kanto</h3>
-<ul id="kanto-cities">
+<h3 id="kanto-heading" class ="park">Kanto</h3>
+<ul id="kanto-cities" class="parklist">
     <li>Viridian</li>
     <li>Pewter</li>
     <li>Cerulean</li>
     <li>Vermillion</li>
     <li>Celadon</li>
 </ul>
-<h3 id="johto-heading">Johto</h3>
-<ul id="johto-cities">
+<h3 id="johto-heading" class ="park">Johto</h3>
+<ul id="johto-cities" class="parklist">
     <li>Ecruteak</li>
     <li>Cherrygrove</li>
     <li>Violet</li>
     <li>Azalea</li>
     <li>Goldenrod</li>
 </ul>
-<h3 id="hoenn-heading">Hoenn</h3>
-<ul id="hoenn-cities">
+<h3 id="hoenn-heading" class ="park">Hoenn</h3>
+<ul id="hoenn-cities" class="parklist">
     <li>Verdanturf</li>
     <li>Littleroot</li>
     <li>Oldale</li>
@@ -102,9 +113,13 @@
     <li>Rustboro</li>
 </ul>
 <button type="button" id="btn2">Click</button>
+
+<!--<div></div>-->
+<!--<div></div>-->
+<!--<div></div>-->
+<!--<button type="button" id="btn3">Click</button>-->
 <script>
     "use strict"
-const poke = document.querySelectorAll('[data-dt]')
 
     $(document).ready(function(){
         $('#visbut').click(e=>{
@@ -123,21 +138,13 @@ const poke = document.querySelectorAll('[data-dt]')
         })
     })
 
-
-
-    // $(document).ready(function(){
-    //     $('dt').click(e=>{
-    //         e.preventDefault();
-    //         $('dt').toggleClass()
-    //     })
-    // })
-
     $(document).ready(function(){
         $('h3').click(e=>{
             e.preventDefault();
             $('ul').children().css('font-weight','bold')
         })
     })
+
 
     $(document).ready(function(){
         $('#btn2').click(function(){
@@ -150,6 +157,29 @@ const poke = document.querySelectorAll('[data-dt]')
         $('*').click(function(){
             $('ul li:first-child').css('color','blue')
         })
+    })
+
+    $(document).ready(function() {
+        $('span').click(function () {
+            $('.signup').slideToggle();
+        })
+    })
+
+    $(document).ready(function() {
+        $('span').click(function () {
+            $('.signup').slideUp();
+        })
+    })
+
+    $(document).ready(function(){
+        $('.park').click(function(){
+                $(this).next().slideToggle();
+            }
+        )})
+
+
+    $(document).ready(function(){
+        $('.learn').fadeIn(8000);
     })
 </script>
 </body>
