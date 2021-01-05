@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<div class="blog"></div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    let blog = "data/blog.json";
+    $.get(blog).done(function(data, status, jqXhr){
+        alert("All good");
+        data.forEach(datum=>{
+            $('.blog').append("<h1>"+datum.title+"</h1><p>"+datum.content+"</p>")
+        })
+    }).fail(function(jqXhr, status,error){
+        // alert("Error error");
+        // console.log("Response status: "+ status);
+        // console.log("Error object: "+ error);
+    })
+</script>
+</body>
+</html>
