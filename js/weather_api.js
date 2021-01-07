@@ -110,6 +110,11 @@ function onDragEnd() {
     coordinates.innerHTML =
         'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
     updateWeather(lat,lng)
+    reverseGeocode(lngLat,mapBoxToken).then(result=>{
+        let address = result.split(',')
+        const current = document.getElementById('current')
+        current.innerText = "Current City: "+address[1]
+    })
 
 }
 
