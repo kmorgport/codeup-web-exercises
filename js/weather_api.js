@@ -65,19 +65,6 @@ function updateWeather(lat,lon){
     });
 }
 
-
-// $.get("http://api.openweathermap.org/data/2.5/forecast", {
-//     APPID: weatherToken,
-//     lat: 32.779167,
-//     lon: -96.808891,
-//     units: "imperial",
-//     cnt: 40
-// }).done(function(data){
-//     const days = data.list.filter(e=>data.list.indexOf(e)%8===0);
-//     days.forEach(day=>{
-//         makeCard(day)
-//     })
-// });
 const popUp = new mapboxgl.Popup()
 const locsearch = document.getElementById("search");
 locsearch.addEventListener("click",e=>{
@@ -95,3 +82,19 @@ locsearch.addEventListener("click",e=>{
         updateWeather(result[1],result[0])
     })
 })
+
+const coordinates = document.getElementById('coordinates');
+const marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([-96.7970, 32.7767])
+    .addTo(map);
+
+function onDragEnd() {
+    let lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML =
+        'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+}
+
+marker.on('dragend', onDragEnd);
