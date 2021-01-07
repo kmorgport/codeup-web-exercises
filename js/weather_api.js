@@ -7,10 +7,13 @@ var map = new mapboxgl.Map({
     center:[-96.7970, 32.7767]
 });
 
-var zoomSelect = document.getElementById("zoom-select")
-zoomSelect.addEventListener("change", function(e){
-    var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
-    map.setZoom(parseInt(zoomValue));
-})
-
 console.log('hello')
+
+
+$.get("http://api.openweathermap.org/data/2.5/weather", {
+    APPID: weatherToken,
+    q:     "Dallas, US",
+    units: "imperial"
+}).done(function(data){
+    console.log(data)
+});
