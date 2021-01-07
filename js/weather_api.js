@@ -6,9 +6,8 @@ var map = new mapboxgl.Map({
     zoom: 10,
     center:[-96.7970, 32.7767]
 });
-
+const wrapper = document.getElementById('wrapper')
 function makeCard(info){
-    const wrapper = document.getElementById('wrapper')
     const card = document.createElement("div");
     card.setAttribute('class', 'card m-2');
     const header = document.createElement('div');
@@ -41,6 +40,13 @@ function makeCard(info){
     wrapper.appendChild(card);
 }
 
+function removeCards(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+
+}
+
 function updateWeather(lat,lon){
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: weatherToken,
@@ -50,8 +56,11 @@ function updateWeather(lat,lon){
         cnt: 40
     }).done(function(data){
         const days = data.list.filter(e=>data.list.indexOf(e)%8===0);
+        if(wrapper.hasChildNodes()){
+            removeCards(wrapper)
+        }
         days.forEach(day=>{
-            makeCard(day)
+                makeCard(day)
         })
     });
 }
@@ -69,7 +78,6 @@ function updateWeather(lat,lon){
 //         makeCard(day)
 //     })
 // });
-let coords = null;
 const popUp = new mapboxgl.Popup()
 const locsearch = document.getElementById("search");
 locsearch.addEventListener("click",e=>{
