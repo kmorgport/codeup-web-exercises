@@ -6,11 +6,12 @@ var map = new mapboxgl.Map({
     zoom: 10,
     center:[-96.7970, 32.7767]
 });
-
+// "+"<br>"+"<img src=http://openweathermap.org/img/w/"+info.weather[0].icon+".png width=\"50\" height=\"50\">";
 console.log('hello')
 function makeCard(info){
-    const wrapper = document.getElementsByClassName('wrapper')
-    const card = document.createElement('div');
+    const wrapper = document.getElementById('wrapper')
+    console.log(wrapper)
+    const card = document.createElement("div");
     card.setAttribute('class', 'card m-2');
     const header = document.createElement('div');
     header.setAttribute('class', 'card-header');
@@ -19,20 +20,21 @@ function makeCard(info){
     weath.setAttribute('class', 'list-group list-group-flush');
     const temp = document.createElement('li');
     temp.setAttribute('class', 'list-group list-group-flush');
-    temp.innerHTML= info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"+"<img src="+info.weather[0].id+".png width=\"50\" height=\"50\">";
+    temp.innerHTML= info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"+"<img src=http://openweathermap.org/img/w/"+info.weather[0].icon+".png width=\"50\" height=\"50\">";
     const descr = document.createElement('li');
-    descr.setAttribute('class', 'list-group list-group-flush');
+    descr.setAttribute('class', 'list-group-item');
     descr.textContent = "Description: "+info.weather[0].description;
     const humidity = document.createElement('li');
-    humidity.setAttribute('class', 'list-group list-group-flush');
+    humidity.setAttribute('class', 'list-group-item');
     humidity.textContent = "Humidity: "+info.main.humidity;
     const wind = document.createElement('li');
-    wind.setAttribute('class', 'list-group list-group-flush');
+    wind.setAttribute('class', 'list-group-item');
     wind.textContent = "Wind: "+info.wind.speed;
     const pressure = document.createElement('li');
-    pressure.setAttribute('class', 'list-group list-group-flush');
-    pressure.textContent = "Wind: "+info.main.pressure;
+    pressure.setAttribute('class', 'list-group-item');
+    pressure.textContent = "Pressure: "+info.main.pressure;
     weath.appendChild(temp);
+    weath.appendChild(descr)
     weath.appendChild(humidity);
     weath.appendChild(wind);
     weath.appendChild(pressure);

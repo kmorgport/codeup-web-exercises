@@ -13,6 +13,10 @@
 .card{
     width: 12em;
 }
+ul{
+    display: flex;
+    justify-content: center;
+}
 
 .wrapper{
     justify-content: center;
