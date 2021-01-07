@@ -40,32 +40,50 @@ function makeCard(info){
     card.appendChild(weath);
     wrapper.appendChild(card);
 }
-$.get("http://api.openweathermap.org/data/2.5/forecast", {
-    APPID: weatherToken,
-    lat: 32.779167,
-    lon: -96.808891,
-    units: "imperial",
-    cnt: 40
-}).done(function(data){
-    const days = data.list.filter(e=>data.list.indexOf(e)%8===0);
-    days.forEach(day=>{
-        makeCard(day)
-    })
-});
 
+function updateWeather(lat,lon){
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: weatherToken,
+        lat: lat,
+        lon: lon,
+        units: "imperial",
+        cnt: 40
+    }).done(function(data){
+        const days = data.list.filter(e=>data.list.indexOf(e)%8===0);
+        days.forEach(day=>{
+            makeCard(day)
+        })
+    });
+}
+
+
+// $.get("http://api.openweathermap.org/data/2.5/forecast", {
+//     APPID: weatherToken,
+//     lat: 32.779167,
+//     lon: -96.808891,
+//     units: "imperial",
+//     cnt: 40
+// }).done(function(data){
+//     const days = data.list.filter(e=>data.list.indexOf(e)%8===0);
+//     days.forEach(day=>{
+//         makeCard(day)
+//     })
+// });
+let coords = null;
 const popUp = new mapboxgl.Popup()
 const locsearch = document.getElementById("search");
 locsearch.addEventListener("click",e=>{
     e.preventDefault();
     let address = document.getElementById("text").value;
     geocode(address, mapBoxToken).then(result =>{
-        console.log(result);
         map.jumpTo({center: result});
         map.setZoom(15);
         let marker = new mapboxgl.Marker()
         marker.setLngLat(result);
         popUp.setHTML(address).addTo(map)
         marker.setPopup(popUp)
+        return result
+    }).then(result=>{
+        updateWeather(result[1],result[0])
     })
-
 })
