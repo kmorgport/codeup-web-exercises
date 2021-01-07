@@ -93,8 +93,12 @@ const marker = new mapboxgl.Marker({
 function onDragEnd() {
     let lngLat = marker.getLngLat();
     coordinates.style.display = 'block';
+    let lng = lngLat.lng;
+    let lat = lngLat.lat
     coordinates.innerHTML =
         'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+    updateWeather(lat,lng)
+
 }
 
 marker.on('dragend', onDragEnd);
