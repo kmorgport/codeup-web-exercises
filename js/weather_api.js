@@ -6,6 +6,8 @@ var map = new mapboxgl.Map({
     zoom: 10,
     center:[-96.7970, 32.7767]
 });
+
+
 const wrapper = document.getElementById('wrapper')
 function makeCard(info){
     const card = document.createElement("div");
@@ -64,12 +66,22 @@ function updateWeather(lat,lon){
         })
     });
 }
+// function updateCity(input){
+//     const current = document.getElementById('current')
+//     let capital = input.split(' ').map(e=>e[0].toUpperCase()).join(' ')
+// }
+function updateCity(input){
+    const current = document.getElementById('current')
+    let capital = input.split(' ').map(e=>e.charAt(0).toUpperCase()+e.substring(1)).join(' ')
+    current.innerText= "Current City: "+capital
+}
 
 const popUp = new mapboxgl.Popup()
 const locsearch = document.getElementById("search");
 locsearch.addEventListener("click",e=>{
     e.preventDefault();
     let address = document.getElementById("text").value;
+    updateCity(address);
     geocode(address, mapBoxToken).then(result =>{
         map.jumpTo({center: result});
         map.setZoom(15);
