@@ -6,11 +6,9 @@ var map = new mapboxgl.Map({
     zoom: 10,
     center:[-96.7970, 32.7767]
 });
-// "+"<br>"+"<img src=http://openweathermap.org/img/w/"+info.weather[0].icon+".png width=\"50\" height=\"50\">";
-console.log('hello')
+
 function makeCard(info){
     const wrapper = document.getElementById('wrapper')
-    console.log(wrapper)
     const card = document.createElement("div");
     card.setAttribute('class', 'card m-2');
     const header = document.createElement('div');
@@ -19,7 +17,7 @@ function makeCard(info){
     const weath = document.createElement('ul');
     weath.setAttribute('class', 'list-group list-group-flush');
     const temp = document.createElement('li');
-    temp.setAttribute('class', 'list-group list-group-flush');
+    temp.setAttribute('class', 'list-group-item');
     temp.innerHTML= info.main.temp_min +"°F/"+info.main.temp_max+"°F"+"<br>"+"<img src=http://openweathermap.org/img/w/"+info.weather[0].icon+".png width=\"50\" height=\"50\">";
     const descr = document.createElement('li');
     descr.setAttribute('class', 'list-group-item');
@@ -50,8 +48,24 @@ $.get("http://api.openweathermap.org/data/2.5/forecast", {
     cnt: 40
 }).done(function(data){
     const days = data.list.filter(e=>data.list.indexOf(e)%8===0);
-    console.log(days)
     days.forEach(day=>{
         makeCard(day)
     })
 });
+
+const popUp = new mapboxgl.Popup()
+const locsearch = document.getElementById("search");
+locsearch.addEventListener("click",e=>{
+    e.preventDefault();
+    let address = document.getElementById("text").value;
+    geocode(address, mapBoxToken).then(result =>{
+        console.log(result);
+        map.jumpTo({center: result});
+        map.setZoom(15);
+        let marker = new mapboxgl.Marker()
+        marker.setLngLat(result);
+        popUp.setHTML(address).addTo(map)
+        marker.setPopup(popUp)
+    })
+
+})
