@@ -66,37 +66,14 @@ function updateWeather(lat,lon){
         })
     });
 }
-// function updateCity(input){
-//     const current = document.getElementById('current')
-//     let capital = input.split(' ').map(e=>e[0].toUpperCase()).join(' ')
-// }
+
 function updateCity(input){
     const current = document.getElementById('current')
     let capital = input.split(' ').map(e=>e.charAt(0).toUpperCase()+e.substring(1)).join(' ')
     current.innerText= "Current City: "+capital
 }
-
-const popUp = new mapboxgl.Popup()
-const locsearch = document.getElementById("search");
-locsearch.addEventListener("click",e=>{
-    e.preventDefault();
-    let address = document.getElementById("text").value;
-    updateCity(address);
-    geocode(address, mapBoxToken).then(result =>{
-        map.jumpTo({center: result});
-        map.setZoom(15);
-        let marker = new mapboxgl.Marker()
-        marker.setLngLat(result);
-        popUp.setHTML(address).addTo(map)
-        marker.setPopup(popUp)
-        return result
-    }).then(result=>{
-        updateWeather(result[1],result[0])
-    })
-})
-
 const coordinates = document.getElementById('coordinates');
-const marker = new mapboxgl.Marker({
+let marker = new mapboxgl.Marker({
     draggable: true
 })
     .setLngLat([-96.7970, 32.7767])
@@ -119,3 +96,46 @@ function onDragEnd() {
 }
 
 marker.on('dragend', onDragEnd);
+
+// const popUp = new mapboxgl.Popup()
+const locsearch = document.getElementById("search");
+locsearch.addEventListener("click",e=>{
+    e.preventDefault();
+    let address = document.getElementById("text").value;
+    updateCity(address);
+    geocode(address, mapBoxToken).then(result =>{
+        map.jumpTo({center:result})
+        map.setZoom(15);
+        marker.setLngLat({lng:result[0],lat:result[1]});
+        marker.addTo(map)
+        // marker.flyTo({center:result})
+        return result
+    }).then(result=>{
+        updateWeather(result[1],result[0])
+    })
+})
+
+// const coordinates = document.getElementById('coordinates');
+// const marker = new mapboxgl.Marker({
+//     draggable: true
+// })
+//     .setLngLat([-96.7970, 32.7767])
+//     .addTo(map);
+//
+// function onDragEnd() {
+//     let lngLat = marker.getLngLat();
+//     coordinates.style.display = 'block';
+//     let lng = lngLat.lng;
+//     let lat = lngLat.lat
+//     coordinates.innerHTML =
+//         'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+//     updateWeather(lat,lng)
+//     reverseGeocode(lngLat,mapBoxToken).then(result=>{
+//         let address = result.split(',')
+//         const current = document.getElementById('current')
+//         current.innerText = "Current City: "+address[1]
+//     })
+//
+// }
+//
+// marker.on('dragend', onDragEnd);
