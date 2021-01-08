@@ -4,6 +4,12 @@
     height: 30em;
 }
 
+body{
+    background-image: url(../img/weather.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .card-deck{
     margin-top:3em;
     margin-bottom:3em;
@@ -27,12 +33,19 @@
 
 .card{
     width: 12em;
+    box-shadow: 3px 1px 6px #0000;
+    border-radius: 5px;
+    background-color: rgba(17,138,178,0.8);
+    font-weight: bold;
+    align-items: center;
 }
 ul{
     display: flex;
     justify-content: center;
 }
-
+li:nth-child(1){
+    text-align: center;
+}
 .wrapper{
     justify-content: center;
 }

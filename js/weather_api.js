@@ -11,9 +11,9 @@ var map = new mapboxgl.Map({
 const wrapper = document.getElementById('wrapper')
 function makeCard(info){
     const card = document.createElement("div");
-    card.setAttribute('class', 'card m-2');
+    card.setAttribute('class', 'card m-2 rounded');
     const header = document.createElement('div');
-    header.setAttribute('class', 'card-header');
+    header.setAttribute('class', 'card-header justify-center');
     header.textContent= info.dt_txt.slice(0,10);
     const weath = document.createElement('ul');
     weath.setAttribute('class', 'list-group list-group-flush');
