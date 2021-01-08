@@ -9,6 +9,21 @@
     margin-bottom:3em;
     display: flex;
 }
+.navbar{
+    /*background: rgb(249,82,26);*/
+    /*background: linear-gradient(0deg, rgba(249,82,26,1) 14%, rgba(26,235,237,1) 95%);*/
+    background: rgb(255,209,102);
+    background: linear-gradient(0deg, rgba(255,209,102,1) 14%, rgba(26,235,237,1) 95%);
+}
+#text{
+    border: #847477 1px solid;
+    box-shadow: 3px 1px 6px;
+}
+#search{
+    background: rgb(17,138,178);
+    border: #847477 1px solid;
+    box-shadow: 3px 1px 6px;
+}
 
 .card{
     width: 12em;
