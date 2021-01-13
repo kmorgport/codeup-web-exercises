@@ -1,3 +1,4 @@
+"use strict"
 const users = [
     {
         id: 1,
@@ -36,33 +37,32 @@ const users = [
     }
 ];
 
-for(let user of users){
-    var threeUsers = users.filter(user=> user.languages.length >= 3)
-}
+
+let threeUsers = users.filter(user=> user.languages.length >= 3)
 console.log(threeUsers)
 
-for(let user of users){
-    var email = users.map(user=>user.email)
-}
+
+let email = users.map(user=>user.email)
+
 console.log(email);
 
-for(let user of users){
-    var exp = users.map(user=>user.yearsOfExperience)
-    const sum = exp.reduce((accumulation, currentNumber)=>{
-        return accumulation + currentNumber;
+
+let exp = users.map(user=>user.yearsOfExperience)
+const sum = exp.reduce((accumulation, currentNumber)=>{
+    return accumulation + currentNumber;
     },0)
-    var avg = sum/users.length
-}
+let avg = sum/users.length
+console.log(sum)
 console.log(avg)
 
-for(let user of users){
-    var email = users.map(user=>user.email)
-    var strSplit = email.sort()
-}
-console.log(strSplit[0])
 
-for(let user of users){
-    var names = users.map(user=>user.name)
-    var namestr = "Your instructors are: "+ names.join(', ')+'.';
-}
+// let strSplit = email.sort()
+const longestEmail = users.reduce((total, user)=>
+    (total.email.length)>(user.email.length)? total:user)
+console.log(longestEmail.email)
+
+
+let names = users.map(user=>user.name)
+let namestr = `Your instructors are: ${names.join(',')}.`
+
 console.log(namestr)

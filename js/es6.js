@@ -34,8 +34,8 @@ const users = [
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
 const name = 'your_name_here';
-var email = '';
-var languages = ['javascript','java','sql','html','css'];
+const email = '';
+const languages = ['javascript','java','sql','html','css'];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
@@ -49,12 +49,8 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(user=>{
-  return emails.push(user.email);
-});
-users.forEach(user=> {
-  return names.push(user.name);
-});
+users.forEach(user=>emails.push(user.email))
+users.forEach(user=> names.push(user.name))
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
@@ -66,7 +62,7 @@ users.forEach((user)=> {
 
   // TODO: rewrite the assignment below to use template strings
   developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
-  developers.push(`${name}'s email is ${email}${name} knows ${languages.join(', ')}`);
+  developers.push(`${name}'s email is ${email}.${name} knows ${languages.join(', ')}`);
 });
 
 // TODO: Use `let` for the following variable
