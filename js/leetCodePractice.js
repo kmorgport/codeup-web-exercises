@@ -1,3 +1,4 @@
+"use strict"
 // function findMaxWealth(arr){
 //     var newArr=[];
 //     for(let i=0; i<arr.length; i++){
@@ -99,19 +100,19 @@ const books = [
         "price": 17.44
     }
 ]
-function bookslength(obj){
-    console.log(obj.length)
-}
-bookslength(books)
-
-function sumtot(obj){
-    const sum = obj.reduce((total, book)=>{
-        return total + book.price;
-    },0)
-    console.log(sum/books.length)
-}
-
-sumtot(books)
+// function bookslength(obj){
+//     console.log(obj.length)
+// }
+// bookslength(books)
+//
+// function sumtot(obj){
+//     const sum = obj.reduce((total, book)=>{
+//         return total + book.price;
+//     },0)
+//     console.log(sum/books.length)
+// }
+//
+// sumtot(books)
 
 // function highestPrice(obj){
 //     let maxPrice = obj.reduce((max, book)=> max.price > book.price ? max : book);
@@ -202,28 +203,28 @@ console.log(shoppingCart.items.length)
 // }
 
 
-// const books = [
-//     {
-//         title: "Genetic Algorithms and Machine Learning for Programmers",
-//         price: 36.99,
-//         author: "Frances Buontempo"
-//     },
-//     {
-//         title: "The Visual Display of Quantitative Information",
-//         price: 38.0,
-//         author: "Edward Tufte"
-//     },
-//     {
-//         title: "Practical Object-Oriented Design",
-//         author: "Sandi Metz",
-//         price: 30.47
-//     },
-//     {
-//         title: "Weapons of Math Destruction",
-//         author: "Cathy O'Neil",
-//         price: 17.44
-//     }
-// ];
+const books = [
+    {
+        title: "Genetic Algorithms and Machine Learning for Programmers",
+        price: 36.99,
+        author: "Frances Buontempo"
+    },
+    {
+        title: "The Visual Display of Quantitative Information",
+        price: 38.0,
+        author: "Edward Tufte"
+    },
+    {
+        title: "Practical Object-Oriented Design",
+        author: "Sandi Metz",
+        price: 30.47
+    },
+    {
+        title: "Weapons of Math Destruction",
+        author: "Cathy O'Neil",
+        price: 17.44
+    }
+];
 
 
 
@@ -241,10 +242,10 @@ console.log(shoppingCart.items.length)
 //
 // high(books)
 //
-// function highest(books){
-//     const high = books.reduce((max, book)=>(max.price)>(book.price)? max:book)
-//     console.log(high)
-// }
+function highest(books){
+    const high = books.reduce((max, book)=>(max.price)>(book.price)? max:book)
+    console.log(high)
+}
 // highest(books)
 //
 //

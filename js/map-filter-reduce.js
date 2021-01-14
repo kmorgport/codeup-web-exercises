@@ -58,7 +58,7 @@ console.log(avg)
 
 // let strSplit = email.sort()
 const longestEmail = users.reduce((total, user)=>
-    (total.email.length)>(user.email.length)? total:user)
+    ((total.email.length)>(user.email.length))? total:user,users[0])
 console.log(longestEmail.email)
 
 
