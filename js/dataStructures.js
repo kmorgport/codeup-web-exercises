@@ -25,8 +25,31 @@ for(let key in anagram1){
 return true;
 
 }
+function sameFrequency(num1, num2){
+    let obj1 = {};
+    let obj2 = {};
+    for(let val of num1.toString()){
+        obj1[val] = (obj1[val]||0)+1;
+    }
+    for(let val of num2.toString()){
+        obj2[val] = (obj2[val]||0)+1;
+    }
+    for(let key in obj1){
+        if(!(key in obj2)){
+            return false;
+        }
+        if(obj2[key]!== obj1[key] ){
+            return false;
+        }
+        return true;
+    }
+    // good luck. Add any arguments you deem necessary.
+}
 
-console.log(anagram("aaz", "zza"));
-console.log(anagram("anagram", "nagaram"));
-console.log(anagram("awesome","awesom"));
-console.log(anagram("rat","tar"))
+// console.log(anagram("aaz", "zza"));
+// console.log(anagram("anagram", "nagaram"));
+// console.log(anagram("awesome","awesom"));
+// console.log(anagram("rat","tar"))
+
+console.log(sameFrequency(182, 281));
+console.log(sameFrequency(22, 222));
