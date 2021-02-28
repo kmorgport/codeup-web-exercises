@@ -76,20 +76,19 @@ function sumZero(arr){
     }
 }
 
-
+//inquire on time complexity
 function naiveSearch(long, short){
-    let start = 0;
-    let end = short.length+1;
-    let test = long.slice(start,end)
-        if(test === short)return true;
-        for(let i = end, j=1; i<long.length; i++,j++){
-            test = long.slice(start+j,i)
-            if(test === short )return true;
+    let count = 0;
+    let test;
+        for(let i = short.length, j=0; i<=long.length; i++,j++){
+            test = long.slice(j,i)
+            console.log(test)
+            if(test === short )count++
         }
-        return false;
+        return count;
 }
-console.log(naiveSearch("lorie loled", "lol"))
-console.log(naiveSearch("quick brown fox jumped over the lazy dog", "jumped"))
+console.log(naiveSearch("abcddd", "dd"))
+// console.log(naiveSearch("quick brown fox jumped over the lazy dog", "ju"))
 
 // console.log(anagram("aaz", "zza"));
 // console.log(anagram("anagram", "nagaram"));
