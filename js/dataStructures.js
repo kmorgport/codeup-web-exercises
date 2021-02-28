@@ -46,10 +46,59 @@ function sameFrequency(num1, num2){
     // good luck. Add any arguments you deem necessary.
 }
 
+function areThereDuplicates(...args){
+    if([...args].length === 0) return false;
+    let i = 0;
+    let arr = [...args];
+    for(let j = 1; j<arr.length; j++){
+        if(arr[i] !== arr[j]){
+            i++
+        }else{
+            return true;
+        }
+        return false;
+    }
+
+}
+
+function sumZero(arr){
+    let left = 0;
+    let right = arr.length-1;
+    while(left<right){
+        let sum = arr[left] + arr[right];
+        if(sum === 0){
+            return [arr[left], arr[right]]
+        }else if(sum>0){
+            right --;
+        }else{
+            left++;
+        }
+    }
+}
+
+
+function naiveSearch(long, short){
+    let start = 0;
+    let end = short.length+1;
+    let test = long.slice(start,end)
+        if(test === short)return true;
+        for(let i = end, j=1; i<long.length; i++,j++){
+            test = long.slice(start+j,i)
+            if(test === short )return true;
+        }
+        return false;
+}
+console.log(naiveSearch("lorie loled", "lol"))
+console.log(naiveSearch("quick brown fox jumped over the lazy dog", "jumped"))
+
 // console.log(anagram("aaz", "zza"));
 // console.log(anagram("anagram", "nagaram"));
 // console.log(anagram("awesome","awesom"));
 // console.log(anagram("rat","tar"))
 
-console.log(sameFrequency(182, 281));
-console.log(sameFrequency(22, 222));
+// console.log(sameFrequency(182, 281));
+// console.log(sameFrequency(22, 222));
+
+// console.log(areThereDuplicates(1, 2,2,3));
+// console.log(areThereDuplicates(1, 2, 3, 4, 5));
+// console.log(areThereDuplicates('a', 'b'));
