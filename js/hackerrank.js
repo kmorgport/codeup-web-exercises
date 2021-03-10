@@ -51,22 +51,30 @@
 // }
 //
 // partyList("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill")
+//
+// function findRatios(arr){
+//     let poz = 0;
+//     let neg = 0;
+//     let zero = 0;
+//     for(let i = 0; i<arr.length;i++){
+//         if(arr[i]>0){
+//             poz++;
+//         }else if(arr[i]<0){
+//             neg++;
+//         }else{
+//             zero++;
+//         }
+//     }
+//     console.log((poz/arr.length).toFixed(6));
+//     console.log((neg/arr.length).toFixed(6));
+//     console.log((zero/arr.length).toFixed(6));
+// }
+// findRatios([1,1,0,-1,-1])
 
-function findRatios(arr){
-    let poz = 0;
-    let neg = 0;
-    let zero = 0;
-    for(let i = 0; i<arr.length;i++){
-        if(arr[i]>0){
-            poz++;
-        }else if(arr[i]<0){
-            neg++;
-        }else{
-            zero++;
-        }
+function staircase(n){
+    let pound = "#";
+    for(let i = 1; i<=n;i++){
+        console.log(pound.repeat(i).padStart(n));
     }
-    console.log((poz/arr.length).toFixed(6));
-    console.log((neg/arr.length).toFixed(6));
-    console.log((zero/arr.length).toFixed(6));
 }
-findRatios([1,1,0,-1,-1])
+staircase(4)
