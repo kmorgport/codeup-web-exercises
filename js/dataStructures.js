@@ -80,14 +80,14 @@ function sumZero(arr){
 function naiveSearch(long, short){
     let count = 0;
     let test;
-        for(let i = short.length, j=0; i<=long.length; i++,j++){
-            test = long.slice(j,i)
+        for(let i = 0; i<long.length; i++){
+            test = long.slice(i,i+short.length)
             console.log(test)
             if(test === short )count++
         }
         return count;
 }
-console.log(naiveSearch("abcddd", "dd"))
+console.log(naiveSearch("a", "dd"))
 // console.log(naiveSearch("quick brown fox jumped over the lazy dog", "ju"))
 
 // console.log(anagram("aaz", "zza"));
