@@ -71,10 +71,46 @@
 // }
 // findRatios([1,1,0,-1,-1])
 
-function staircase(n){
-    let pound = "#";
-    for(let i = 1; i<=n;i++){
-        console.log(pound.repeat(i).padStart(n));
+// function staircase(n){
+//     let pound = "#";
+//     for(let i = 1; i<=n;i++){
+//         console.log(pound.repeat(i).padStart(n));
+//     }
+// }
+// staircase(4)
+
+// function minMaxSum(arr){
+//     let sum = 0;
+//     for(let i=0; i<arr.length; i++){
+//         sum+=arr[i]
+//     }
+//     if(arr[0]<0){
+//         console.log(sum - arr[arr.length - 1], sum+arr[0]);
+//     }else {
+//         console.log(sum - arr[arr.length - 1],sum - arr[0]);
+//     }
+// }
+//
+// minMaxSum([1,3,5,7,9])
+
+//one without using sort
+
+function changeTime(s){
+    let night = s.slice(s.length-2)
+    if(s.slice(0,2)==12&&s.slice(s.length-2)=="AM"){
+        console.log("00"+s.slice(2,s.length-2))
+    }else if(s.slice(0,2)==12&&s.slice(s.length-2)=="PM"){
+        console.log(s.slice(0,s.length-2))
+    }
+    else if(night=="PM"){
+        let hour = s.slice(0,2);
+        let fixed = (parseInt(hour)+12).toString()+s.slice(2,s.length-2)
+        console.log(fixed)
+    }else{
+        console.log(s.slice(0,s.length-2))
     }
 }
-staircase(4)
+
+changeTime("07:05:45PM")
+changeTime("12:05:45PM")
+changeTime("12:05:45AM")
