@@ -95,22 +95,44 @@
 
 //one without using sort
 
-function changeTime(s){
-    let night = s.slice(s.length-2)
-    if(s.slice(0,2)==12&&s.slice(s.length-2)=="AM"){
-        console.log("00"+s.slice(2,s.length-2))
-    }else if(s.slice(0,2)==12&&s.slice(s.length-2)=="PM"){
-        console.log(s.slice(0,s.length-2))
+// function changeTime(s){
+//     let night = s.slice(s.length-2)
+//     if(s.slice(0,2)==12&&s.slice(s.length-2)=="AM"){
+//         console.log("00"+s.slice(2,s.length-2))
+//     }else if(s.slice(0,2)==12&&s.slice(s.length-2)=="PM"){
+//         console.log(s.slice(0,s.length-2))
+//     }
+//     else if(night=="PM"){
+//         let hour = s.slice(0,2);
+//         let fixed = (parseInt(hour)+12).toString()+s.slice(2,s.length-2)
+//         console.log(fixed)
+//     }else{
+//         console.log(s.slice(0,s.length-2))
+//     }
+// }
+//
+// changeTime("07:05:45PM")
+// changeTime("12:05:45PM")
+// changeTime("12:05:45AM")
+// &&((apples[i]+a)<t)
+// &&((oranges[i]+a)<t)
+// &&((oranges[i]+a)<t)
+function countApplesAndOranges(s,t,a,b,apples,oranges){
+    let appInRange = 0;
+    let ornInRange = 0;
+    for(let i = 0; i<apples.length; i++){
+        if(((apples[i]+a)>=s)){
+            appInRange+=1;
+        }
     }
-    else if(night=="PM"){
-        let hour = s.slice(0,2);
-        let fixed = (parseInt(hour)+12).toString()+s.slice(2,s.length-2)
-        console.log(fixed)
-    }else{
-        console.log(s.slice(0,s.length-2))
+    console.log(appInRange)
+    for(let i = 0; i<oranges.length;i++){
+        // console.log(oranges[i]+a)
+        if((oranges[i]+b)<=t){
+            ornInRange+=1
+        }
     }
+    console.log(ornInRange)
 }
 
-changeTime("07:05:45PM")
-changeTime("12:05:45PM")
-changeTime("12:05:45AM")
+countApplesAndOranges(7,10,4,12,[2,3,-4],[3,-2,-4])
