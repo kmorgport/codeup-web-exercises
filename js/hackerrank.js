@@ -117,21 +117,36 @@
 // &&((apples[i]+a)<t)
 // &&((oranges[i]+a)<t)
 // &&((oranges[i]+a)<t)
-function countApplesAndOranges(s,t,a,b,apples,oranges){
-    let appInRange = 0;
-    let ornInRange = 0;
-    for(let i = 0; i<apples.length; i++){
-        if(((apples[i]+a)>=s&&(apples[i]+a)<=t)){
-            appInRange+=1;
-        }
+// function countApplesAndOranges(s,t,a,b,apples,oranges){
+//     let appInRange = 0;
+//     let ornInRange = 0;
+//     for(let i = 0; i<apples.length; i++){
+//         if(((apples[i]+a)>=s&&(apples[i]+a)<=t)){
+//             appInRange+=1;
+//         }
+//     }
+//     console.log(appInRange)
+//     for(let i = 0; i<oranges.length;i++){
+//         if((((oranges[i]+b)>=s)&&(oranges[i]+b)<=t)){
+//             ornInRange+=1
+//         }
+//     }
+//     console.log(ornInRange)
+// }
+//
+// countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
+
+function compareTriplets(a,b){
+    let aResult = 0;
+    let bResult = 0;
+    let array = [];
+    for(let i = 0; i<a.length; i++){
+        if(a[i]>b[i])aResult++;
+        if(b[i]>a[i])bResult++;
     }
-    console.log(appInRange)
-    for(let i = 0; i<oranges.length;i++){
-        if((((oranges[i]+b)>=s)&&(oranges[i]+b)<=t)){
-            ornInRange+=1
-        }
-    }
-    console.log(ornInRange)
+    array.push(aResult);
+    array.push(bResult);
+    return array;
 }
 
-countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
+console.log(compareTriplets([17, 28, 30], [99, 16, 8]));
