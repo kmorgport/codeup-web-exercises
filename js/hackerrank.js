@@ -136,17 +136,49 @@
 //
 // countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6])
 
-function compareTriplets(a,b){
-    let aResult = 0;
-    let bResult = 0;
-    let array = [];
-    for(let i = 0; i<a.length; i++){
-        if(a[i]>b[i])aResult++;
-        if(b[i]>a[i])bResult++;
+// function compareTriplets(a,b){
+//     let aResult = 0;
+//     let bResult = 0;
+//     let array = [];
+//     for(let i = 0; i<a.length; i++){
+//         if(a[i]>b[i])aResult++;
+//         if(b[i]>a[i])bResult++;
+//     }
+//     array.push(aResult);
+//     array.push(bResult);
+//     return array;
+// }
+//
+// console.log(compareTriplets([17, 28, 30], [99, 16, 8]));
+
+// function sumtot(obj){
+//     const sum = obj.reduce((total, book)=>{
+//         return total + book.price;
+//     },0)
+//     console.log(sum/books.length)
+// }
+
+// function largestSum(n){
+//     const sum = n.reduce((total, num)=>{
+//         return total + num;
+//     })
+//     console.log(sum);
+// }
+//
+// largestSum([1000000001,1000000002,1000000003, 1000000004,1000000005])
+
+//count how many pairs of socks are in an array
+function sockMerchant(n,arr){
+    let sockObj = {};
+    let count = 0;
+    for(let sock of arr){
+        sockObj[sock] = (sockObj[sock]||0) + 1
     }
-    array.push(aResult);
-    array.push(bResult);
-    return array;
+    console.log(sockObj)
+    for(let sock in sockObj){
+            count += Math.floor(sockObj[sock]/2)
+    }
+    return count
 }
 
-console.log(compareTriplets([17, 28, 30], [99, 16, 8]));
+sockMerchant(9,[10, 20, 20, 10, 10, 30, 50, 10, 20])
