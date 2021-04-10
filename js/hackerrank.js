@@ -181,22 +181,50 @@
 // }
 //
 // sockMerchant(9,[10, 20, 20, 10, 10, 30, 50, 10, 20])
+//
+// function valley(arr){
+//     let v = 0;
+//     let lvl = 0;
+//     //iterates over array
+//     for(let i= 0; i<arr.length; i++){
+//         //if goes up counts up
+//         if(arr[i] ==="U") ++lvl;
+//         //if down decreases
+//         if(arr[i] === "D")-- lvl;
+//         //if the level is zero and the direction is up
+//         if(lvl === 0 && arr[i] ==="U")
+//             //exited a valley
+//             ++v;
+//     }
+//     return v
+// }
+//
+// valley("UDDDUDUU");
 
-function valley(arr){
-    let v = 0;
-    let lvl = 0;
-    //iterates over array
-    for(let i= 0; i<arr.length; i++){
-        //if goes up counts up
-        if(arr[i] ==="U") ++lvl;
-        //if down decreases
-        if(arr[i] === "D")-- lvl;
-        //if the level is zero and the direction is up
-        if(lvl === 0 && arr[i] ==="U")
-            //exited a valley
-            ++v;
+// function cloudjumps(n, arr){
+//     let count = 0;
+//     for(let i = 0; i<arr.length-1; i++){
+//         if(arr[i]==0)i++;
+//         count++
+//     }
+//     return count
+// }
+//
+// cloudjumps([0,0,0,0,1,0])
+
+function countAs(s,n){
+    if(s==="a")return n;
+    let string =""
+    while(string.length<n){
+        string+=s
     }
-    return v
+    string = string.slice(0,n)
+let counter = {}
+for(let i = 0; i<string.length; i++){
+    counter[string[i]] = (counter[string[i]]||0)+1
+}
+for(let count in counter) {
+    if(count === "a")return(counter[count])
+}
 }
 
-valley("UDDDUDUU");
