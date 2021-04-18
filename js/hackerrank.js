@@ -212,19 +212,54 @@
 //
 // cloudjumps([0,0,0,0,1,0])
 
-function countAs(s,n){
-    if(s==="a")return n;
-    let string =""
-    while(string.length<n){
-        string+=s
-    }
-    string = string.slice(0,n)
-let counter = {}
-for(let i = 0; i<string.length; i++){
-    counter[string[i]] = (counter[string[i]]||0)+1
-}
-for(let count in counter) {
-    if(count === "a")return(counter[count])
-}
-}
+// function countAs(s,n){
+//     if(s==="a")return n;
+//     let string =""
+//     while(string.length<n){
+//         string+=s
+//     }
+//     string = string.slice(0,n)
+// let counter = {}
+// for(let i = 0; i<string.length; i++){
+//     counter[string[i]] = (counter[string[i]]||0)+1
+// }
+// for(let count in counter) {
+//     if(count === "a")return(counter[count])
+// }
+// }
 
+
+//counting infinites 
+// function repeatedString(s, n) {
+//     let fracNumber = Math.trunc(n / s.length);
+//     let reminder = n % s.length;
+//     let counter = 0;
+//
+//     for (let index = 0; index < s.length; index++) {
+//         if (s[index] === 'a') {
+//             counter++;
+//         }
+//     }
+//     counter = counter * fracNumber;
+//     for (let index = 0; index < reminder; index++) {
+//         if (s[index] === 'a') {
+//             counter++;
+//         }
+//     }
+//     return counter;
+// }
+
+function roundingGrades(arr){
+    let finalGrades = [];
+    for(let i=0; i<arr.length;i++){
+        if(arr[i]>=38&&((arr[i]+2)%10)===0){
+            finalGrades.push(Math.round(arr[i]/10)*10);
+        }else if(arr[i]>=38&&((arr[i]+2)%5)===0){
+            finalGrades.push((Math.round(arr[i]/10)*10)+5);
+        }else{
+            finalGrades.push(arr[i])
+        }
+    }
+    return finalGrades
+}
+roundingGrades([73,67,38,33])
